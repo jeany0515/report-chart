@@ -2,13 +2,15 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import OverviewChart from './component/OverviewChart'
-import { Row } from 'antd';
+import { Row, Col } from 'antd';
 import 'antd/dist/antd.css';
+import FourAbilitiesChart from './component/FourAbilitiesChart';
 
 function App() {
   return (
     <div className="App">
       <OverviewChart />
+      <FourAbilitiesChart/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
