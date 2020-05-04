@@ -8,7 +8,7 @@ const techData = [
     { item: 'Competent', count: 17, percent: 0.17 },
     { item: 'Developing', count: 13, percent: 0.13 },
     { item: 'Mariginal', count: 9, percent: 0.09 },
-  ];
+];
 
 export default class FourAbilitiesChart extends Component {
     static propTypes = {
@@ -21,44 +21,47 @@ export default class FourAbilitiesChart extends Component {
             container: 'ability',
             autoFit: true,
             height: 500,
-          });
-          chart.coordinate('theta', {
+        });
+        chart.coordinate('theta', {
             radius: 0.75,
-          });
-          
-          chart.data(techData);
-          
-          chart.scale('percent', {
+        });
+
+        chart.data(techData);
+
+        chart.scale('percent', {
             formatter: (val) => {
-              val = val * 100 + '%';
-              return val;
+                val = val * 100 + '%';
+                return val;
             },
-          });
-          
-          chart.tooltip({
+        });
+
+        chart.tooltip({
             showTitle: false,
             showMarkers: false,
-          });
-          
-          chart
+        });
+
+        chart
             .interval()
             .position('percent')
             .color('item')
             .label('percent', {
-              content: (data) => {
-                return `${data.item}: ${data.percent * 100}%`;
-              },
+                content: (data) => {
+                    return `${data.item}: ${data.percent * 100}%`;
+                },
             })
             .adjust('stack');
-          
-          chart.interaction('element-active');
-          
-          chart.render();
+
+        chart.interaction('element-active');
+
+        chart.render();
     }
 
     render() {
         return (
-            <div id="ability">
+            <div>
+                <div>学员能力总揽</div>
+                <div id="ability">
+                </div>
             </div>
         )
     }
