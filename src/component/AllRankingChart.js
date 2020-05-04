@@ -21,14 +21,14 @@ const data = [
     { country: '李四', population: 1220 },
 ];
 
-export default class HomeworkScoreChart extends Component {
+export default class AllRankingChart extends Component {
     static propTypes = {
         prop: PropTypes
     }
 
     componentDidMount() {
         const chart = new Chart({
-            container: 'score',
+            container: 'allRanking',
             autoFit: true,
             height: 500,
         });
@@ -47,8 +47,8 @@ export default class HomeworkScoreChart extends Component {
     render() {
         return (
             <div>
-                <div>作业分数排名</div>
-                <div id='score'>
+                <div>总排名</div>
+                <div id='allRanking'>
                 </div>
             </div>
         )
