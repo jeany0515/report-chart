@@ -18,7 +18,7 @@ export default class FourAbilitiesChart extends Component {
     componentDidMount() {
         // Step 1: 创建 Chart 对象
         const chart = new Chart({
-            container: 'c1',
+            container: 'ability',
             autoFit: true,
             height: 500,
           });

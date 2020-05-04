@@ -2,6 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import OverviewChart from './component/OverviewChart'
+import { Row } from 'antd';
+import 'antd/dist/antd.css';
 
 function App() {
   return (
