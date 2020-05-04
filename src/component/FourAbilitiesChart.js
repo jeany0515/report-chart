@@ -41,164 +41,59 @@ export default class FourAbilitiesChart extends Component {
         prop: PropTypes
     }
 
-    renderTechChart() {
-        // Step 1: 创建 Chart 对象
+    renderChart(containerId, data, title) {
         const chart = new Chart({
-            container: 'tech',
+            container: containerId,
             autoFit: true,
             height: 500,
         });
-        chart.coordinate('theta', {
-            radius: 0.75,
-        });
-
-        chart.data(techData);
-
+        chart.data(data);
         chart.scale('percent', {
             formatter: (val) => {
                 val = val * 100 + '%';
                 return val;
             },
         });
-
-        chart.tooltip({
-            showTitle: false,
-            showMarkers: false,
-        });
-
-        chart
-            .interval()
-            .position('percent')
-            .color('item')
-            .label('percent', {
-                content: (data) => {
-                    return `${data.item}: ${data.percent * 100}%`;
-                },
-            })
-            .adjust('stack');
-
-        chart.interaction('element-active');
-
-        chart.render();
-    }
-
-    renderLearnChart() {
-        // Step 1: 创建 Chart 对象
-        const chart = new Chart({
-            container: 'learn',
-            autoFit: true,
-            height: 500,
-        });
         chart.coordinate('theta', {
             radius: 0.75,
+            innerRadius: 0.6,
         });
-
-        chart.data(learnData);
-
-        chart.scale('percent', {
-            formatter: (val) => {
-                val = val * 100 + '%';
-                return val;
-            },
-        });
-
         chart.tooltip({
             showTitle: false,
             showMarkers: false,
+            itemTpl: '<li class="g2-tooltip-list-item"><span style="background-color:{color};" class="g2-tooltip-marker"></span>{name}: {value}</li>',
         });
-
+        // 辅助文本
+        chart
+            .annotation()
+            .text({
+                position: ['50%', '50%'],
+                content: title,
+                style: {
+                    fontSize: 14,
+                    fill: '#8c8c8c',
+                    textAlign: 'center',
+                }
+            });
         chart
             .interval()
+            .adjust('stack')
             .position('percent')
             .color('item')
-            .label('percent', {
-                content: (data) => {
-                    return `${data.item}: ${data.percent * 100}%`;
-                },
+            .label('percent', (percent) => {
+                return {
+                    content: (data) => {
+                        return `${data.item}: ${percent * 100}%`;
+                    },
+                };
             })
-            .adjust('stack');
-
-        chart.interaction('element-active');
-
-        chart.render();
-    }
-
-    renderComprehensionChart() {
-        // Step 1: 创建 Chart 对象
-        const chart = new Chart({
-            container: 'comprehension',
-            autoFit: true,
-            height: 500,
-        });
-        chart.coordinate('theta', {
-            radius: 0.75,
-        });
-
-        chart.data(comprehensionData);
-
-        chart.scale('percent', {
-            formatter: (val) => {
-                val = val * 100 + '%';
-                return val;
-            },
-        });
-
-        chart.tooltip({
-            showTitle: false,
-            showMarkers: false,
-        });
-
-        chart
-            .interval()
-            .position('percent')
-            .color('item')
-            .label('percent', {
-                content: (data) => {
-                    return `${data.item}: ${data.percent * 100}%`;
-                },
-            })
-            .adjust('stack');
-
-        chart.interaction('element-active');
-
-        chart.render();
-    }
-
-    renderCommunicationChart() {
-        // Step 1: 创建 Chart 对象
-        const chart = new Chart({
-            container: 'communication',
-            autoFit: true,
-            height: 500,
-        });
-        chart.coordinate('theta', {
-            radius: 0.75,
-        });
-
-        chart.data(communicationData);
-
-        chart.scale('percent', {
-            formatter: (val) => {
-                val = val * 100 + '%';
-                return val;
-            },
-        });
-
-        chart.tooltip({
-            showTitle: false,
-            showMarkers: false,
-        });
-
-        chart
-            .interval()
-            .position('percent')
-            .color('item')
-            .label('percent', {
-                content: (data) => {
-                    return `${data.item}: ${data.percent * 100}%`;
-                },
-            })
-            .adjust('stack');
+            .tooltip('item*percent', (item, percent) => {
+                percent = percent * 100 + '%';
+                return {
+                    name: item,
+                    value: percent,
+                };
+            });
 
         chart.interaction('element-active');
 
@@ -206,10 +101,10 @@ export default class FourAbilitiesChart extends Component {
     }
 
     componentDidMount() {
-        this.renderTechChart()
-        this.renderLearnChart()
-        this.renderComprehensionChart()
-        this.renderCommunicationChart()
+        this.renderChart('tech', techData, '技术能力')
+        this.renderChart('learn', learnData, '学习能力')
+        this.renderChart('comprehension', comprehensionData, '理解能力')
+        this.renderChart('communication', communicationData, '沟通能力')
     }
 
     render() {
@@ -218,30 +113,18 @@ export default class FourAbilitiesChart extends Component {
                 <div>学员能力总揽</div>
                 <Row >
                     <Col flex="auto">
-                        <div>
-                            <div>技术能力总揽</div>
-                            <div id="tech"></div>
-                        </div>
+                        <div id="tech"></div>
                     </Col>
                     <Col flex="auto">
-                        <div>
-                            <div>学习能力总揽</div>
-                            <div id="learn"></div>
-                        </div>
+                        <div id="learn"></div>
                     </Col>
                 </Row>
                 <Row>
                     <Col flex="auto">
-                        <div>
-                            <div>理解能力总揽</div>
-                            <div id="comprehension"></div>
-                        </div>
+                        <div id="comprehension"></div>
                     </Col>
                     <Col flex="auto">
-                        <div>
-                            <div>理解能力总揽</div>
-                            <div id="communication"></div>
-                        </div>
+                        <div id="communication"></div>
                     </Col>
                 </Row>
             </div >
