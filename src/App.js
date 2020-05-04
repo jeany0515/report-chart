@@ -6,6 +6,7 @@ import 'antd/dist/antd.css';
 import FourAbilitiesChart from './component/FourAbilitiesChart';
 import AbilityRadarChart from './component/AbilityRadarChart';
 import HomeworkQualityTrendChart from './component/HomeworkQualityTrendChart';
+import HomeworkQualityChart from './component/HomeworkQualityChart';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <FourAbilitiesChart/>
       <AbilityRadarChart/>
       <HomeworkQualityTrendChart/>
+      <HomeworkQualityChart/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
