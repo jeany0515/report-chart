@@ -8,6 +8,7 @@ import AbilityRadarChart from './component/AbilityRadarChart';
 import HomeworkQualityTrendChart from './component/HomeworkQualityTrendChart';
 import HomeworkQualityChart from './component/HomeworkQualityChart';
 import HomeworkScoreChart from './component/HomeworkScoreChart';
+import PersonDetailChart from './component/PersonDetailChart';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <HomeworkQualityTrendChart/>
       <HomeworkQualityChart/>
       <HomeworkScoreChart/>
+      <PersonDetailChart/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
