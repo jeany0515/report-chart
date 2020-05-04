@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Chart } from '@antv/g2';
+import { Row, Col } from 'antd';
+import 'antd/dist/antd.css';
 
 const techData = [
     { item: 'Outstanding', count: 40, percent: 0.4 },
@@ -214,23 +216,35 @@ export default class FourAbilitiesChart extends Component {
         return (
             <div>
                 <div>学员能力总揽</div>
-                <div>
-                    <div>技术能力总揽</div>
-                    <div id="tech"></div>
-                </div>
-                <div>
-                    <div>学习能力总揽</div>
-                    <div id="learn"></div>
-                </div>
-                <div>
-                    <div>理解能力总揽</div>
-                    <div id="comprehension"></div>
-                </div>
-                <div>
-                    <div>理解能力总揽</div>
-                    <div id="communication"></div>
-                </div>
-            </div>
+                <Row >
+                    <Col flex="auto">
+                        <div>
+                            <div>技术能力总揽</div>
+                            <div id="tech"></div>
+                        </div>
+                    </Col>
+                    <Col flex="auto">
+                        <div>
+                            <div>学习能力总揽</div>
+                            <div id="learn"></div>
+                        </div>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col flex="auto">
+                        <div>
+                            <div>理解能力总揽</div>
+                            <div id="comprehension"></div>
+                        </div>
+                    </Col>
+                    <Col flex="auto">
+                        <div>
+                            <div>理解能力总揽</div>
+                            <div id="communication"></div>
+                        </div>
+                    </Col>
+                </Row>
+            </div >
         )
     }
 }
