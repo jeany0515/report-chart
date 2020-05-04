@@ -5,6 +5,7 @@ import OverviewChart from './component/OverviewChart'
 import 'antd/dist/antd.css';
 import FourAbilitiesChart from './component/FourAbilitiesChart';
 import AbilityRadarChart from './component/AbilityRadarChart';
+import HomeworkQualityTrendChart from './component/HomeworkQualityTrendChart';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <OverviewChart />
       <FourAbilitiesChart/>
       <AbilityRadarChart/>
+      <HomeworkQualityTrendChart/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
