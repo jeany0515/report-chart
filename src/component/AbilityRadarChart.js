@@ -4,10 +4,10 @@ import { Chart } from '@antv/g2';
 import DataSet from '@antv/data-set';
 
 const data = [
-    { item: '学习能力', a: 40 },
-    { item: '技术能力', a: 36 },
-    { item: '理解能力', a: 27 },
-    { item: '沟通能力', a: 13 }
+    { item: '学习能力', 张三: 40 },
+    { item: '技术能力', 张三: 36 },
+    { item: '理解能力', 张三: 27 },
+    { item: '沟通能力', 张三: 13 }
 ];
 
 export default class AbilityRadarChart extends Component {
@@ -15,12 +15,12 @@ export default class AbilityRadarChart extends Component {
         prop: PropTypes
     }
 
-    componentDidMount() {
+    renderRadarChart(data, name) {
         const { DataView } = DataSet;
         const dv = new DataView().source(data);
         dv.transform({
             type: 'fold',
-            fields: ['a'], // 展开字段集
+            fields: [name], // 展开字段集
             key: 'user', // key字段
             value: 'score', // value字段
         });
@@ -95,6 +95,10 @@ export default class AbilityRadarChart extends Component {
             .position('item*score')
             .color('user');
         chart.render();
+    }
+
+    componentDidMount() {
+        this.renderRadarChart(data, "张三")
     }
 
     render() {
