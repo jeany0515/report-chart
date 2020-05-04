@@ -3,11 +3,10 @@ import logo from './logo.svg';
 import './App.css';
 import OverviewChart from './component/OverviewChart'
 
-
 function App() {
   return (
     <div className="App">
-      <OverviewChart/>
+      <OverviewChart />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
