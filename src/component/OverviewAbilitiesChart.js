@@ -1,40 +1,9 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import { Chart } from '@antv/g2';
-import { Row, Col } from 'antd';
+import { Col, Row } from 'antd';
 import 'antd/dist/antd.css';
-
-const techData = [
-    { item: 'Outstanding', count: 40, percent: 0.4 },
-    { item: 'Good', count: 21, percent: 0.21 },
-    { item: 'Competent', count: 17, percent: 0.17 },
-    { item: 'Developing', count: 13, percent: 0.13 },
-    { item: 'Mariginal', count: 9, percent: 0.09 },
-];
-
-const learnData = [
-    { item: 'Outstanding', count: 2, percent: 0.1 },
-    { item: 'Good', count: 10, percent: 0.4 },
-    { item: 'Competent', count: 5, percent: 0.2 },
-    { item: 'Developing', count: 3, percent: 0.2 },
-    { item: 'Mariginal', count: 1, percent: 0.1 },
-];
-
-const comprehensionData = [
-    { item: 'Outstanding', count: 2, percent: 0.1 },
-    { item: 'Good', count: 10, percent: 0.4 },
-    { item: 'Competent', count: 5, percent: 0.2 },
-    { item: 'Developing', count: 3, percent: 0.2 },
-    { item: 'Mariginal', count: 1, percent: 0.1 },
-];
-
-const communicationData = [
-    { item: 'Outstanding', count: 2, percent: 0.1 },
-    { item: 'Good', count: 10, percent: 0.4 },
-    { item: 'Competent', count: 5, percent: 0.2 },
-    { item: 'Developing', count: 3, percent: 0.2 },
-    { item: 'Mariginal', count: 1, percent: 0.1 },
-];
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import DataService from '../service/DataService';
 
 export default class OverviewAbilitiesChart extends Component {
     static propTypes = {
@@ -63,7 +32,6 @@ export default class OverviewAbilitiesChart extends Component {
             showMarkers: false,
             itemTpl: '<li class="g2-tooltip-list-item"><span style="background-color:{color};" class="g2-tooltip-marker"></span>{name}: {value}</li>',
         });
-        // 辅助文本
         chart
             .annotation()
             .text({
@@ -101,10 +69,11 @@ export default class OverviewAbilitiesChart extends Component {
     }
 
     componentDidMount() {
-        this.renderChart('tech', techData, '技术能力')
-        this.renderChart('learn', learnData, '学习能力')
-        this.renderChart('comprehension', comprehensionData, '理解能力')
-        this.renderChart('communication', communicationData, '沟通能力')
+        
+        this.renderChart('tech', DataService.getOverviewAbilitiesData('tech'), '技术能力')
+        this.renderChart('learn', DataService.getOverviewAbilitiesData('learn'), '学习能力')
+        this.renderChart('comprehension', DataService.getOverviewAbilitiesData('comprehension'), '理解能力')
+        this.renderChart('communication', DataService.getOverviewAbilitiesData('communication'), '沟通能力')
     }
 
     render() {
