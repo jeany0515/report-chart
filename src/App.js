@@ -33,7 +33,9 @@ function App() {
       <HomeworkQualityRankingChart />
       <Divider />
       <HomeworkScoreChart />
-      <Divider />
+      <Divider orientation="center" style={{ color: '#333', fontWeight: 'normal' }}>
+      以下是每个学员的详细统计报表
+    </Divider>
       <PersonalGroupChart />
       <Divider />
     </div>
