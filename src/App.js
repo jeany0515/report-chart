@@ -11,12 +11,14 @@ import HomeworkScoreChart from './component/HomeworkScoreChart';
 import PersonDetailChart from './component/PersonDetailChart';
 import AllRankingChart from './component/AllRankingChart';
 import HomeworkQualityRankingChart from './component/HomeworkQualityRankingChart';
+import AbilityRankingChart from './component/AbilityRankingChart';
 
 function App() {
   return (
     <div className="App">
       <OverviewChart />
       <FourAbilitiesChart/>
+      <AbilityRankingChart/>
       <AbilityRadarChart/>
       <HomeworkQualityTrendChart/>
       <HomeworkQualityRankingChart/>
