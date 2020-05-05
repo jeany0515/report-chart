@@ -10,7 +10,7 @@ export default class TraineeHomeworkQualityChart extends Component {
 
     componentDidMount() {
         const chart = new Chart({
-            container: this.props.name,
+            container: this.props.name + "quality",
             autoFit: true,
             height: 500,
         });
@@ -71,7 +71,7 @@ export default class TraineeHomeworkQualityChart extends Component {
         return (
             <div>
                 <h1>学员作业质量总揽</h1>
-                <div id={this.props.name}></div>
+                <div id={this.props.name + "quality"}></div>
             </div>
         )
     }

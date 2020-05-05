@@ -9,7 +9,7 @@ export default class TraineeAbilityRadarChart extends Component {
         prop: PropTypes
     }
 
-    renderRadarChart(data, name) {
+    renderRadarChart(data, name, containerId) {
         const { DataView } = DataSet;
         const dv = new DataView().source(data);
         dv.transform({
@@ -20,7 +20,7 @@ export default class TraineeAbilityRadarChart extends Component {
         });
 
         const chart = new Chart({
-            container: name,
+            container: containerId,
             autoFit: true,
             height: 500,
         });
@@ -92,14 +92,14 @@ export default class TraineeAbilityRadarChart extends Component {
     }
 
     componentDidMount() {
-        this.renderRadarChart(DataService.getTraineeAbiltiyRadarData(this.props.name), this.props.name)
+        this.renderRadarChart(DataService.getTraineeAbiltiyRadarData(this.props.name), this.props.name, this.props.name + "ability")
     }
 
     render() {
         return (
             <div>
                 <h1>学员能力图</h1>
-                <div id={this.props.name}>
+                <div id={this.props.name + "ability"}>
                 </div>
             </div>
         )
