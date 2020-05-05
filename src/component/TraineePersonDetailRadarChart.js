@@ -103,7 +103,7 @@ export default class TraineePersonDetailRadarChart extends Component {
     render() {
         return (
             <div>
-                <h1>张三各维度能力详细得分</h1>
+                <h1>{this.props.name}各维度能力详细得分</h1>
                 <Row >
                     <Col flex="820px">
                         <h2>技术能力</h2>
