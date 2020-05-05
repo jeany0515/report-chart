@@ -94,10 +94,10 @@ export default class TraineePersonDetailRadarChart extends Component {
     }
 
     componentDidMount() {
-        this.renderRadarChart('techDetail', DataService.getTraineeDetailData('张三', 'tech'), "张三")
-        this.renderRadarChart('learnDetail', DataService.getTraineeDetailData('张三', 'learn'), "张三")
-        this.renderRadarChart('comprehensionDetail', DataService.getTraineeDetailData('张三', 'comprehension'), "张三")
-        this.renderRadarChart('communicationDetail', DataService.getTraineeDetailData('张三', 'communication'), "张三")
+        this.renderRadarChart(this.props.name + "techDetail", DataService.getTraineeDetailData(this.props.name, 'tech'), this.props.name)
+        this.renderRadarChart(this.props.name + "learnDetail", DataService.getTraineeDetailData(this.props.name, 'learn'), this.props.name)
+        this.renderRadarChart(this.props.name + "comprehensionDetail", DataService.getTraineeDetailData(this.props.name, 'comprehension'), this.props.name)
+        this.renderRadarChart(this.props.name + "communicationDetail", DataService.getTraineeDetailData(this.props.name, 'communication'), this.props.name)
     }
 
     render() {
@@ -107,22 +107,22 @@ export default class TraineePersonDetailRadarChart extends Component {
                 <Row >
                     <Col flex="820px">
                         <h2>技术能力</h2>
-                        <div id="techDetail"></div>
+                        <div id={this.props.name + "techDetail"}></div>
                     </Col>
                     <Col flex="820px">
                         <h2>学习能力</h2>
-                        <div id="learnDetail"></div>
+                        <div id={this.props.name + "learnDetail"}></div>
                     </Col>
                 </Row>
-                <Divider/>
+                <Divider />
                 <Row>
                     <Col flex="820px">
                         <h2>理解能力</h2>
-                        <div id="comprehensionDetail"></div>
+                        <div id={this.props.name + "comprehensionDetail"}></div>
                     </Col>
                     <Col flex="820px">
                         <h2>沟通能力</h2>
-                        <div id="communicationDetail"></div>
+                        <div id={this.props.name + "communicationDetail"}></div>
                     </Col>
                 </Row>
             </div >

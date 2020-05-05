@@ -10,11 +10,11 @@ export default class TraineeHomeworkQualityChart extends Component {
 
     componentDidMount() {
         const chart = new Chart({
-            container: 'quality',
+            container: this.props.name,
             autoFit: true,
             height: 500,
         });
-        chart.data(DataService.getTraineeHomeworkQualityData());
+        chart.data(DataService.getTraineeHomeworkQualityData(this.props.name));
         chart.scale('percent', {
             formatter: (val) => {
                 val = val * 100 + '%';
@@ -71,7 +71,7 @@ export default class TraineeHomeworkQualityChart extends Component {
         return (
             <div>
                 <h1>学员作业质量总揽</h1>
-                <div id="quality"></div>
+                <div id={this.props.name}></div>
             </div>
         )
     }

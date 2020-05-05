@@ -10,12 +10,12 @@ export default class TraineeHomeworkQualityTrendChart extends Component {
 
     componentDidMount() {
         const chart = new Chart({
-            container: 'homework',
+            container: this.props.name,
             autoFit: true,
             height: 500,
         });
 
-        chart.data(DataService.getTraineeHomeworkQualityTrendData('张三'));
+        chart.data(DataService.getTraineeHomeworkQualityTrendData(this.props.name));
         chart.scale({
             year: {
                 range: [0, 1],
@@ -41,7 +41,7 @@ export default class TraineeHomeworkQualityTrendChart extends Component {
         return (
             <div>
                 <h1>每次作业质量走势图</h1>
-                <div id="homework">
+                <div id={this.props.name}>
                 </div>
             </div>
         )
