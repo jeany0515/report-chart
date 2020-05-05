@@ -20,7 +20,7 @@ export default class TraineeAbilityRadarChart extends Component {
         });
 
         const chart = new Chart({
-            container: 'radar',
+            container: name,
             autoFit: true,
             height: 500,
         });
@@ -92,14 +92,14 @@ export default class TraineeAbilityRadarChart extends Component {
     }
 
     componentDidMount() {
-        this.renderRadarChart(DataService.getTraineeAbiltiyRadarData('张三'), "张三")
+        this.renderRadarChart(DataService.getTraineeAbiltiyRadarData('张三'), this.props.name)
     }
 
     render() {
         return (
             <div>
                 <h1>学员能力图</h1>
-                <div id="radar">
+                <div id={this.props.name}>
                 </div>
             </div>
         )
