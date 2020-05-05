@@ -4,7 +4,7 @@ import HomeworkQualityChart from './HomeworkQualityChart';
 import PersonDetailChart from './PersonDetailChart';
 import AbilityRadarChart from './AbilityRadarChart';
 import HomeworkQualityTrendChart from './HomeworkQualityTrendChart';
-import { Divider } from 'antd';
+import { Divider, Col, Row } from 'antd';
 
 export default class PersonalGroupChart extends Component {
     static propTypes = {
@@ -14,11 +14,17 @@ export default class PersonalGroupChart extends Component {
     render() {
         return (
             <div>
+                <h1>张三的详细报表</h1>
                 <AbilityRadarChart />
                 <Divider />
-                <HomeworkQualityTrendChart />
-                <Divider />
-                <HomeworkQualityChart />
+                <Row>
+                    <Col flex="820px">
+                        <HomeworkQualityTrendChart />
+                    </Col>
+                    <Col flex="820px">
+                        <HomeworkQualityChart />
+                    </Col>
+                </Row>
                 <Divider />
                 <PersonDetailChart />
             </div>
