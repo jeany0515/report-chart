@@ -12,13 +12,13 @@ const data = [
     { country: '李还是', population: 799 },
     { country: '李好', population: 821 },
     { country: '李他', population: 840 },
-    { country: '李是', population: 870 },
+    { country: '李分到', population: 870 },
     { country: '李地方', population: 900 },
     { country: '李七', population: 902 },
     { country: '赵六', population: 1000 },
-    { country: '王五', population: 1100 },
-    { country: '张三', population: 1320 },
+    { country: '王五', population: 1100 },    
     { country: '李四', population: 1220 },
+    { country: '张三', population: 1320 },
 ];
 
 export default class HomeworkScoreChart extends Component {
@@ -40,7 +40,14 @@ export default class HomeworkScoreChart extends Component {
             showMarkers: false
         });
         chart.interaction('active-region');
-        chart.interval().position('country*population');
+        chart.interval()
+        .position('country*population')
+        .label('population', {
+            offset: -10,
+            content: (data) => {
+              return data.population;
+            }
+          });;
         chart.render();
     }
 
