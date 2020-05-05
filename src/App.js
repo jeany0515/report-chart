@@ -10,6 +10,7 @@ import HomeworkQualityChart from './component/HomeworkQualityChart';
 import HomeworkScoreChart from './component/HomeworkScoreChart';
 import PersonDetailChart from './component/PersonDetailChart';
 import AllRankingChart from './component/AllRankingChart';
+import HomeworkQualityRankingChart from './component/HomeworkQualityRankingChart';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <FourAbilitiesChart/>
       <AbilityRadarChart/>
       <HomeworkQualityTrendChart/>
+      <HomeworkQualityRankingChart/>
       <HomeworkQualityChart/>
       <HomeworkScoreChart/>
       <PersonDetailChart/>
