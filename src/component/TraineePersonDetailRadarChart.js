@@ -16,7 +16,7 @@ export default class TraineePersonDetailRadarChart extends Component {
         const dv = new DataView().source(data);
         dv.transform({
             type: 'fold',
-            fields: [name], // 展开字段集
+            fields: ["score"], // 展开字段集
             key: 'user', // key字段
             value: 'score', // value字段
         });
