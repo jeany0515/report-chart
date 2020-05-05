@@ -29,19 +29,20 @@ function App() {
       <Divider/>
       <AbilityRankingChart/>
       <Divider/>
+      <AllRankingChart/>
+      <Divider/>
+      <HomeworkQualityRankingChart/>
+      <Divider/>
+      <HomeworkScoreChart/>
+      <Divider/>
       <AbilityRadarChart/>
       <Divider/>
       <HomeworkQualityTrendChart/>
       <Divider/>
-      <HomeworkQualityRankingChart/>
-      <Divider/>
       <HomeworkQualityChart/>
-      <Divider/>
-      <HomeworkScoreChart/>
       <Divider/>
       <PersonDetailChart/>
       <Divider/>
-      <AllRankingChart/>
     </div>
   );
 }
