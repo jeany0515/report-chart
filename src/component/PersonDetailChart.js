@@ -148,22 +148,22 @@ export default class PersonDetailChart extends Component {
             <div>
                 <h1>张三各维度能力详细得分</h1>
                 <Row >
-                    <Col flex="auto">
+                    <Col flex="820px">
                         <h2>技术能力</h2>
                         <div id="techDetail"></div>
                     </Col>
-                    <Col flex="auto">
+                    <Col flex="820px">
                         <h2>学习能力</h2>
                         <div id="learnDetail"></div>
                     </Col>
                 </Row>
                 <Divider/>
                 <Row>
-                    <Col flex="auto">
+                    <Col flex="820px">
                         <h2>理解能力</h2>
                         <div id="comprehensionDetail"></div>
                     </Col>
-                    <Col flex="auto">
+                    <Col flex="820px">
                         <h2>沟通能力</h2>
                         <div id="communicationDetail"></div>
                     </Col>

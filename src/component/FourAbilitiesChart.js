@@ -112,18 +112,18 @@ export default class FourAbilitiesChart extends Component {
             <div>
                 <h1>学员能力总揽</h1>
                 <Row >
-                    <Col flex="auto">
+                    <Col flex="820px">
                         <div id="tech"></div>
                     </Col>
-                    <Col flex="auto">
+                    <Col flex="820px">
                         <div id="learn"></div>
                     </Col>
                 </Row>
                 <Row>
-                    <Col flex="auto">
+                    <Col flex="820px">
                         <div id="comprehension"></div>
                     </Col>
-                    <Col flex="auto">
+                    <Col flex="820px">
                         <div id="communication"></div>
                     </Col>
                 </Row>
