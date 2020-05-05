@@ -53,7 +53,7 @@ export default class HomeworkQualityTrendChart extends Component {
     render() {
         return (
             <div>
-                <div>每次作业走势图</div>
+                <h1>每次作业走势图</h1>
                 <div id="homework">
                 </div>
             </div>

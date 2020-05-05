@@ -104,7 +104,7 @@ export default class AbilityRadarChart extends Component {
     render() {
         return (
             <div>
-                <div>学员能力图</div>
+                <h1>学员能力图</h1>
                 <div id="radar">
                 </div>
             </div>

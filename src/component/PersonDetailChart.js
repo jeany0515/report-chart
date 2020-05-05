@@ -108,7 +108,7 @@ export default class PersonDetailChart extends Component {
     render() {
         return (
             <div>
-                <div>张三技术能力详细得分</div>
+                <h1>张三技术能力详细得分</h1>
                 <div id="techDetail">
                 </div>
             </div>

@@ -54,7 +54,7 @@ export default class AllRankingChart extends Component {
     render() {
         return (
             <div>
-                <div>总排名</div>
+                <h1>总排名</h1>
                 <div id='allRanking'>
                 </div>
             </div>

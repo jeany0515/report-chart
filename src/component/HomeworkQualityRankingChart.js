@@ -54,7 +54,7 @@ export default class HomeworkQualityRankingChart extends Component {
     render() {
         return (
             <div>
-                <div>作业质量排名</div>
+                <h1>作业质量排名</h1>
                 <div id='qualityRanking'>
                 </div>
             </div>

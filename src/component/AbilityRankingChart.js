@@ -119,17 +119,17 @@ export default class AbilityRankingChart extends Component {
     render() {
         return (
             <div>
-                <div>学员能力总揽</div>
+                <h1>学员能力排名</h1>
                 <Row >
                     <Col flex="auto">
                         <div>
-                            <div>技术能力排名</div>
+                            <h2>技术能力排名</h2>
                             <div id="techRanking"></div>
                         </div>
                     </Col>
                     <Col flex="auto">
                         <div>
-                            <div>学习能力排名</div>
+                            <h2>学习能力排名</h2>
                             <div id="learnRanking"></div>
                         </div>
                     </Col>
@@ -137,13 +137,13 @@ export default class AbilityRankingChart extends Component {
                 <Row>
                     <Col flex="auto">
                         <div>
-                            <div>理解能力排名</div>
+                            <h2>理解能力排名</h2>
                             <div id="comprehensionRanking"></div>
                         </div>
                     </Col>
                     <Col flex="auto">
                         <div>
-                            <div>沟通能力排名</div>
+                            <h2>沟通能力排名</h2>
                             <div id="communicationRanking"></div>
                         </div>
                     </Col>

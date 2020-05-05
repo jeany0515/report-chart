@@ -110,7 +110,7 @@ export default class FourAbilitiesChart extends Component {
     render() {
         return (
             <div>
-                <div>学员能力总揽</div>
+                <h1>学员能力总揽</h1>
                 <Row >
                     <Col flex="auto">
                         <div id="tech"></div>
