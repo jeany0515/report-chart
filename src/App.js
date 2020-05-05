@@ -1,5 +1,6 @@
 import React from 'react';
 import thoughtworks from './thoughtworks.png'
+import afs from './afs.png'
 import './App.css';
 import OverviewChart from './component/OverviewChart'
 import 'antd/dist/antd.css';
@@ -15,25 +16,26 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={thoughtworks} alt="logo" />
-        <p>
-          2020 AFS 报告
-        </p>
+        <img src={afs} alt="logo" width='100px' align='right'/>
+        <img src={thoughtworks} alt="logo" height='100px'/>
+        <h1 style={{color: 'white'}}>
+          2020 XXXX AFS Bootcamp 报告
+        </h1>
       </header>
       <OverviewChart />
-      <Divider/>
-      <FourAbilitiesChart/>
-      <Divider/>
-      <AbilityRankingChart/>
-      <Divider/>
-      <AllRankingChart/>
-      <Divider/>
-      <HomeworkQualityRankingChart/>
-      <Divider/>
-      <HomeworkScoreChart/>
-      <Divider/>
-      <PersonalGroupChart/>
-      <Divider/>
+      <Divider />
+      <FourAbilitiesChart />
+      <Divider />
+      <AbilityRankingChart />
+      <Divider />
+      <AllRankingChart />
+      <Divider />
+      <HomeworkQualityRankingChart />
+      <Divider />
+      <HomeworkScoreChart />
+      <Divider />
+      <PersonalGroupChart />
+      <Divider />
     </div>
   );
 }
