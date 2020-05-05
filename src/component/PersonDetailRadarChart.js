@@ -4,50 +4,7 @@ import { Chart } from '@antv/g2';
 import DataSet from '@antv/data-set';
 import { Row, Col, Divider } from 'antd';
 import 'antd/dist/antd.css';
-
-const techData = [
-    { item: '每次练习都有写测试', 张三: 20 },
-    { item: '代码设计符合OO思想', 张三: 15 },
-    { item: '每次练习都能做到职责单一', 张三: 10 },
-    { item: '有较快的编码速度完成练习', 张三: 14 },
-    { item: '能通过搜集信息快速定位问题', 张三: 16 },
-    { item: '能独立使用新框架(Spring/React等)完成练习', 张三: 7 },
-    { item: '能快速定位解决bug或问题', 张三: 17 },
-    { item: '代码编写满足clean code', 张三: 12 }
-];
-
-const learnData = [
-    { item: '每次练习都能小步提交', 张三: 20 },
-    { item: '每次练习都能TDD', 张三: 15 },
-    { item: '能积极参与code review', 张三: 20 },
-    { item: '坚持每日写总结', 张三: 14 },
-    { item: '能借助常见的工具帮助自己独立解决问题', 张三: 16 },
-    { item: '能独立上手新工具和框架', 张三: 20 },
-    { item: '能熟练使用IDE的快捷键', 张三: 17 },
-    { item: '每次练习都有持续重构', 张三: 12 }
-];
-
-const compreData = [
-    { item: '每次练习之前都做Tasking', 张三: 20 },
-    { item: '能接受别人的反馈并改进', 张三: 15 },
-    { item: '每次练习都做到需求澄清', 张三: 10 },
-    { item: '能理解每次练习的需求', 张三: 18 },
-    { item: '能发现他人代码中的问题', 张三: 16 },
-    { item: '能理解新知识', 张三: 20 },
-    { item: '能使用有业务意义的git commit', 张三: 17 },
-    { item: '能使用有业务意义的代码命名', 张三: 18 }
-];
-
-const commuData = [
-    { item: '能积极帮助其他组员解决问题', 张三: 20 },
-    { item: '能积极参与小组内讨论', 张三: 15 },
-    { item: '能清楚表达自己的观点或问题', 张三: 19 },
-    { item: '能积极参与showcase', 张三: 14 },
-    { item: '能积极回答问题', 张三: 16 },
-    { item: '能积极寻求帮助', 张三: 2 },
-    { item: '能积极给出Code Review反馈', 张三: 17 },
-    { item: '能积极分享观点、技能', 张三: 16 }
-];
+import DataService from '../service/DataService';
 
 export default class PersonDetailRadarChart extends Component {
     static propTypes = {
@@ -137,10 +94,10 @@ export default class PersonDetailRadarChart extends Component {
     }
 
     componentDidMount() {
-        this.renderRadarChart('techDetail', techData, "张三")
-        this.renderRadarChart('learnDetail', learnData, "张三")
-        this.renderRadarChart('comprehensionDetail', compreData, "张三")
-        this.renderRadarChart('communicationDetail', commuData, "张三")
+        this.renderRadarChart('techDetail', DataService.getTraineeDetailData('张三', 'tech'), "张三")
+        this.renderRadarChart('learnDetail', DataService.getTraineeDetailData('张三', 'learn'), "张三")
+        this.renderRadarChart('comprehensionDetail', DataService.getTraineeDetailData('张三', 'comprehension'), "张三")
+        this.renderRadarChart('communicationDetail', DataService.getTraineeDetailData('张三', 'communication'), "张三")
     }
 
     render() {
