@@ -186,6 +186,17 @@ class DataService {
             { country: '张三', population: 1320 },
         ];
     }
+
+    static getTraineeAbiltiyRadarData(name) {
+        if (name === '张三') {
+        }
+        return [
+            { item: '学习能力', 张三: 40 },
+            { item: '技术能力', 张三: 36 },
+            { item: '理解能力', 张三: 27 },
+            { item: '沟通能力', 张三: 13 }
+        ];
+    }
 }
 
 export default DataService

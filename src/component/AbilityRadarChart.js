@@ -2,13 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Chart } from '@antv/g2';
 import DataSet from '@antv/data-set';
-
-const data = [
-    { item: '学习能力', 张三: 40 },
-    { item: '技术能力', 张三: 36 },
-    { item: '理解能力', 张三: 27 },
-    { item: '沟通能力', 张三: 13 }
-];
+import DataService from '../service/DataService';
 
 export default class AbilityRadarChart extends Component {
     static propTypes = {
@@ -98,7 +92,7 @@ export default class AbilityRadarChart extends Component {
     }
 
     componentDidMount() {
-        this.renderRadarChart(data, "张三")
+        this.renderRadarChart(DataService.getTraineeAbiltiyRadarData('张三'), "张三")
     }
 
     render() {
