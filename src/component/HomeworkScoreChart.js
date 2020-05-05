@@ -47,7 +47,8 @@ export default class HomeworkScoreChart extends Component {
             content: (data) => {
               return data.population;
             }
-          });;
+          })
+          .color('#a3e043');
         chart.render();
     }
 

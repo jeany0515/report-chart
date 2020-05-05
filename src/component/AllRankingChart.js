@@ -47,7 +47,8 @@ export default class AllRankingChart extends Component {
             content: (data) => {
               return data.population;
             }
-          });
+          })
+          .color('#34a853');
         chart.render();
     }
 

@@ -47,7 +47,8 @@ export default class HomeworkQualityRankingChart extends Component {
             content: (data) => {
               return data.population;
             }
-          });
+          })
+          .color('#37d9f0') ;
         chart.render();
     }
 
