@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+import thoughtworks from './thoughtworks.png'
 import './App.css';
 import OverviewChart from './component/OverviewChart'
 import 'antd/dist/antd.css';
@@ -12,34 +12,36 @@ import PersonDetailChart from './component/PersonDetailChart';
 import AllRankingChart from './component/AllRankingChart';
 import HomeworkQualityRankingChart from './component/HomeworkQualityRankingChart';
 import AbilityRankingChart from './component/AbilityRankingChart';
+import { Divider } from 'antd';
 
 function App() {
   return (
     <div className="App">
-      <OverviewChart />
-      <FourAbilitiesChart/>
-      <AbilityRankingChart/>
-      <AbilityRadarChart/>
-      <HomeworkQualityTrendChart/>
-      <HomeworkQualityRankingChart/>
-      <HomeworkQualityChart/>
-      <HomeworkScoreChart/>
-      <PersonDetailChart/>
-      <AllRankingChart/>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={thoughtworks} alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          2020 AFS 报告
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+      <OverviewChart />
+      <Divider/>
+      <FourAbilitiesChart/>
+      <Divider/>
+      <AbilityRankingChart/>
+      <Divider/>
+      <AbilityRadarChart/>
+      <Divider/>
+      <HomeworkQualityTrendChart/>
+      <Divider/>
+      <HomeworkQualityRankingChart/>
+      <Divider/>
+      <HomeworkQualityChart/>
+      <Divider/>
+      <HomeworkScoreChart/>
+      <Divider/>
+      <PersonDetailChart/>
+      <Divider/>
+      <AllRankingChart/>
     </div>
   );
 }
