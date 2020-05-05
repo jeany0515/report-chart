@@ -4,15 +4,12 @@ import './App.css';
 import OverviewChart from './component/OverviewChart'
 import 'antd/dist/antd.css';
 import FourAbilitiesChart from './component/FourAbilitiesChart';
-import AbilityRadarChart from './component/AbilityRadarChart';
-import HomeworkQualityTrendChart from './component/HomeworkQualityTrendChart';
-import HomeworkQualityChart from './component/HomeworkQualityChart';
 import HomeworkScoreChart from './component/HomeworkScoreChart';
-import PersonDetailChart from './component/PersonDetailChart';
 import AllRankingChart from './component/AllRankingChart';
 import HomeworkQualityRankingChart from './component/HomeworkQualityRankingChart';
 import AbilityRankingChart from './component/AbilityRankingChart';
 import { Divider } from 'antd';
+import PersonalGroupChart from './component/PersonalGroupChart';
 
 function App() {
   return (
@@ -35,13 +32,7 @@ function App() {
       <Divider/>
       <HomeworkScoreChart/>
       <Divider/>
-      <AbilityRadarChart/>
-      <Divider/>
-      <HomeworkQualityTrendChart/>
-      <Divider/>
-      <HomeworkQualityChart/>
-      <Divider/>
-      <PersonDetailChart/>
+      <PersonalGroupChart/>
       <Divider/>
     </div>
   );
