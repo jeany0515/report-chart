@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import HomeworkQualityChart from './HomeworkQualityChart';
-import PersonDetailChart from './PersonDetailChart';
+import PersonDetailRadarChart from './PersonDetailRadarChart';
 import AbilityRadarChart from './AbilityRadarChart';
 import HomeworkQualityTrendChart from './HomeworkQualityTrendChart';
 import { Divider, Col, Row } from 'antd';
@@ -26,7 +26,7 @@ export default class PersonalGroupChart extends Component {
                     </Col>
                 </Row>
                 <Divider />
-                <PersonDetailChart />
+                <PersonDetailRadarChart />
             </div>
         )
     }

@@ -2,9 +2,9 @@ import React from 'react';
 import thoughtworks from './thoughtworks.png'
 import afs from './afs.png'
 import './App.css';
-import OverviewChart from './component/OverviewChart'
+import OverviewLevelChart from './component/OverviewLevelChart'
 import 'antd/dist/antd.css';
-import FourAbilitiesChart from './component/FourAbilitiesChart';
+import OverviewAbilitiesChart from './component/OverviewAbilitiesChart';
 import HomeworkScoreChart from './component/HomeworkScoreChart';
 import AllRankingChart from './component/AllRankingChart';
 import HomeworkQualityRankingChart from './component/HomeworkQualityRankingChart';
@@ -22,9 +22,9 @@ function App() {
           2020 XXXX AFS Bootcamp 报告
         </h1>
       </header>
-      <OverviewChart />
+      <OverviewLevelChart />
       <Divider />
-      <FourAbilitiesChart />
+      <OverviewAbilitiesChart />
       <Divider />
       <AbilityRankingChart />
       <Divider />

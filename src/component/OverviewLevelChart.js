@@ -9,7 +9,7 @@ const data = [
     { item: 'Mariginal', count: 9, percent: 0.09 },
 ];
 
-export default class OverviewChart extends Component {
+export default class OverviewLevelChart extends Component {
     static propTypes = {
         prop: PropTypes
     }

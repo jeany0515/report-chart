@@ -49,7 +49,7 @@ const commuData = [
     { item: '能积极分享观点、技能', 张三: 16 }
 ];
 
-export default class PersonDetailChart extends Component {
+export default class PersonDetailRadarChart extends Component {
     static propTypes = {
         prop: PropTypes
     }

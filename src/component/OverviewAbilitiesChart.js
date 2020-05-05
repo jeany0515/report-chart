@@ -36,7 +36,7 @@ const communicationData = [
     { item: 'Mariginal', count: 1, percent: 0.1 },
 ];
 
-export default class FourAbilitiesChart extends Component {
+export default class OverviewAbilitiesChart extends Component {
     static propTypes = {
         prop: PropTypes
     }
