@@ -37,7 +37,8 @@ export default class HomeworkScoreChart extends Component {
     render() {
         return (
             <div>
-                <h1>学习平台积分排名（作业完成度+验收题）</h1>
+                <h1>学习平台积分排名</h1>
+                <p>此结果仅统计作业完成度得分和验收题得分。</p>
                 <div id='score'>
                 </div>
             </div>

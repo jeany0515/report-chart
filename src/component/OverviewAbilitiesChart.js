@@ -80,6 +80,7 @@ export default class OverviewAbilitiesChart extends Component {
         return (
             <div>
                 <h1>学员能力总揽</h1>
+                <p>所有学员分不同维度的统计结果</p>
                 <Row >
                     <Col flex="820px">
                         <div id="tech"></div>

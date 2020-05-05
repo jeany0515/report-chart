@@ -2,16 +2,14 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Chart } from '@antv/g2';
 import DataSet from '@antv/data-set';
-import { Row, Col, Divider } from 'antd';
-import 'antd/dist/antd.css';
 import DataService from '../service/DataService';
 
-export default class PersonDetailRadarChart extends Component {
+export default class TraineeAbilityRadarChart extends Component {
     static propTypes = {
         prop: PropTypes
     }
 
-    renderRadarChart(containerId, data, name) {
+    renderRadarChart(data, name) {
         const { DataView } = DataSet;
         const dv = new DataView().source(data);
         dv.transform({
@@ -22,14 +20,14 @@ export default class PersonDetailRadarChart extends Component {
         });
 
         const chart = new Chart({
-            container: containerId,
+            container: 'radar',
             autoFit: true,
             height: 500,
         });
         chart.data(dv.rows);
         chart.scale('score', {
             min: 0,
-            max: 20,
+            max: 40,
         });
         chart.coordinate('polar', {
             radius: 0.8,
@@ -94,38 +92,16 @@ export default class PersonDetailRadarChart extends Component {
     }
 
     componentDidMount() {
-        this.renderRadarChart('techDetail', DataService.getTraineeDetailData('张三', 'tech'), "张三")
-        this.renderRadarChart('learnDetail', DataService.getTraineeDetailData('张三', 'learn'), "张三")
-        this.renderRadarChart('comprehensionDetail', DataService.getTraineeDetailData('张三', 'comprehension'), "张三")
-        this.renderRadarChart('communicationDetail', DataService.getTraineeDetailData('张三', 'communication'), "张三")
+        this.renderRadarChart(DataService.getTraineeAbiltiyRadarData('张三'), "张三")
     }
 
     render() {
         return (
             <div>
-                <h1>张三各维度能力详细得分</h1>
-                <Row >
-                    <Col flex="820px">
-                        <h2>技术能力</h2>
-                        <div id="techDetail"></div>
-                    </Col>
-                    <Col flex="820px">
-                        <h2>学习能力</h2>
-                        <div id="learnDetail"></div>
-                    </Col>
-                </Row>
-                <Divider/>
-                <Row>
-                    <Col flex="820px">
-                        <h2>理解能力</h2>
-                        <div id="comprehensionDetail"></div>
-                    </Col>
-                    <Col flex="820px">
-                        <h2>沟通能力</h2>
-                        <div id="communicationDetail"></div>
-                    </Col>
-                </Row>
-            </div >
+                <h1>学员能力图</h1>
+                <div id="radar">
+                </div>
+            </div>
         )
     }
 }

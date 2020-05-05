@@ -45,6 +45,7 @@ export default class AbilityRankingChart extends Component {
         return (
             <div>
                 <h1>学员能力排名</h1>
+                <p>所有学员不同维度能力的排名结果</p>
                 <Row >
                     <Col flex="820px">
                         <div>

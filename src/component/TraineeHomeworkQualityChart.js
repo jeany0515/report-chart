@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Chart } from '@antv/g2';
 import DataService from '../service/DataService';
 
-export default class HomeworkQualityChart extends Component {
+export default class TraineeHomeworkQualityChart extends Component {
     static propTypes = {
         prop: PropTypes
     }

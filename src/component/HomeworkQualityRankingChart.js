@@ -38,6 +38,7 @@ export default class HomeworkQualityRankingChart extends Component {
         return (
             <div>
                 <h1>作业质量排名</h1>
+                <p>所有学员的作业质量得分排名结果</p>
                 <div id='qualityRanking'>
                 </div>
             </div>
