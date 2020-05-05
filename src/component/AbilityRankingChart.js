@@ -98,7 +98,14 @@ export default class AbilityRankingChart extends Component {
             showMarkers: false
         });
         chart.interaction('active-region');
-        chart.interval().position('country*population');
+        chart.interval()
+        .position('country*population')
+        .label('population', {
+            offset: -10,
+            content: (data) => {
+              return data.population;
+            }
+          });
         chart.render();
     }
 
