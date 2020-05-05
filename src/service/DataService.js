@@ -189,12 +189,18 @@ class DataService {
 
     static getTraineeAbiltiyRadarData(name) {
         if (name === '张三') {
+            return [
+                { item: '学习能力', 张三: 30 },
+                { item: '技术能力', 张三: 36 },
+                { item: '理解能力', 张三: 27 },
+                { item: '沟通能力', 张三: 23 }
+            ];
         }
         return [
-            { item: '学习能力', 张三: 40 },
-            { item: '技术能力', 张三: 36 },
-            { item: '理解能力', 张三: 27 },
-            { item: '沟通能力', 张三: 13 }
+            { item: '学习能力', 李四: 10 },
+            { item: '技术能力', 李四: 36 },
+            { item: '理解能力', 李四: 37 },
+            { item: '沟通能力', 李四: 33 }
         ];
     }
 

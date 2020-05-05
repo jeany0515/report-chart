@@ -92,7 +92,7 @@ export default class TraineeAbilityRadarChart extends Component {
     }
 
     componentDidMount() {
-        this.renderRadarChart(DataService.getTraineeAbiltiyRadarData('张三'), this.props.name)
+        this.renderRadarChart(DataService.getTraineeAbiltiyRadarData(this.props.name), this.props.name)
     }
 
     render() {
