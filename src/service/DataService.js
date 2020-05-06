@@ -1,4 +1,11 @@
 class DataService {
+    static getTraineesData() {
+        return [
+            { name: "张三" },
+            { name: "李四" }
+        ]
+    }
+
     static getOverviewLevelData() {
         return [
             { item: 'Outstanding', count: 40, percent: 0.4 },

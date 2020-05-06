@@ -9,21 +9,15 @@ import HomeworkQualityRankingChart from './HomeworkQualityRankingChart';
 import AbilityRankingChart from './AbilityRankingChart';
 import { Divider } from 'antd';
 import PersonalGroupChart from './PersonalGroupChart';
+import DataService from '../service/DataService';
 
 export default class Charts extends Component {
     static propTypes = {
         prop: PropTypes
     }
 
-    initTraineesData() {
-        return [
-            { name: "张三" },
-            { name: "李四" }
-        ]
-    }
-
     render() {
-        let trainees = this.initTraineesData()
+        let trainees = DataService.getTraineesData()
         return (
             <div>
                 <OverviewLevelChart />
