@@ -2,6 +2,7 @@ class DataService {
     static getTraineesData() {
         return [
             { name: "张三" },
+            { name: "王五" },
             { name: "李四" }
         ]
     }
