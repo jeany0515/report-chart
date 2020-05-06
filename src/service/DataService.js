@@ -8,13 +8,32 @@ class DataService {
     }
 
     static getOverviewLevelData() {
+        const outstandingLine = 320
+        const goodLine = 300
+        const competentLine = 280
+        const developingLine = 240
+        const marginalLine = 230
+        const totalScores = data.总分.filter(allScores => allScores.维度 === "总分")[0]
+        const allScores = Object.values(totalScores).filter(score => score !== "总分");
+        const outstanding = allScores.filter(score => score > outstandingLine).length
+        const good = allScores.filter(score => score > goodLine && score < outstandingLine).length
+        const competent = allScores.filter(score => score > competentLine && score < goodLine).length
+        const developing = allScores.filter(score => score > developingLine && score < competentLine).length
+        const marginal = allScores.filter(score => score < developingLine).length
         return [
-            { item: 'Outstanding', count: 40, percent: 0.4 },
-            { item: 'Good', count: 21, percent: 0.21 },
-            { item: 'Competent', count: 17, percent: 0.17 },
-            { item: 'Developing', count: 13, percent: 0.13 },
-            { item: 'Mariginal', count: 9, percent: 0.09 },
+            { item: 'Outstanding', count: 40, percent: outstanding/allScores.length },
+            { item: 'Good', count: 21, percent: good/allScores.length },
+            { item: 'Competent', count: 17, percent: competent/allScores.length },
+            { item: 'Developing', count: 13, percent: developing/allScores.length },
+            { item: 'Mariginal', count: 9, percent: marginal/allScores.length },
         ];
+        // return [
+        //     { item: 'Outstanding', count: 40, percent: outstanding/allScores.count },
+        //     { item: 'Good', count: 21, percent: good/allScores.count },
+        //     { item: 'Competent', count: 17, percent: competent/allScores.count },
+        //     { item: 'Developing', count: 13, percent: developing/allScores.count },
+        //     { item: 'Mariginal', count: 9, percent: marginal/allScores.count },
+        // ];
     }
 
     static getOverviewAbilitiesData(category) {
