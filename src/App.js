@@ -13,6 +13,9 @@ function App() {
         <h1 style={{ color: 'white' }}>
           2020 XXXX AFS Bootcamp 报告
         </h1>
+        <h6 style={{ color: 'white' }}>
+          5月1日 - 5月29日
+        </h6>
       </header>
       <Charts />
     </div>
