@@ -16,18 +16,18 @@ export default class HomeworkScoreChart extends Component {
         });
 
         chart.data(DataService.getHomeworkScoreData());
-        chart.scale('population', { nice: true });
+        chart.scale('score', { nice: true });
         chart.coordinate().transpose();
         chart.tooltip({
             showMarkers: false
         });
         chart.interaction('active-region');
         chart.interval()
-        .position('country*population')
-        .label('population', {
+        .position('name*score')
+        .label('score', {
             offset: -10,
             content: (data) => {
-              return data.population;
+              return data.score;
             }
           })
           .color('#a3e043');
