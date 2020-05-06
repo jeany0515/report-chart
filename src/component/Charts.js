@@ -7,12 +7,9 @@ import HomeworkScoreChart from './HomeworkScoreChart';
 import AllRankingChart from './AllRankingChart';
 import HomeworkQualityRankingChart from './HomeworkQualityRankingChart';
 import AbilityRankingChart from './AbilityRankingChart';
-import { Divider, Card, Row, Col, Avatar } from 'antd';
+import { Divider, Card, Row, Col } from 'antd';
 import PersonalGroupChart from './PersonalGroupChart';
 import DataService from '../service/DataService';
-import { UserOutlined } from '@ant-design/icons';
-
-const { Meta } = Card;
 
 export default class Charts extends Component {
     static propTypes = {
