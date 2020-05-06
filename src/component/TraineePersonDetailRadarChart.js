@@ -105,22 +105,22 @@ export default class TraineePersonDetailRadarChart extends Component {
             <div>
                 <h1>{this.props.name}各维度能力详细得分</h1>
                 <Row >
-                    <Col flex="820px">
+                    <Col flex="750px">
                         <h2>技术能力</h2>
                         <div id={this.props.name + "techDetail"}></div>
                     </Col>
-                    <Col flex="820px">
+                    <Col flex="750px">
                         <h2>学习能力</h2>
                         <div id={this.props.name + "learnDetail"}></div>
                     </Col>
                 </Row>
                 <Divider />
                 <Row>
-                    <Col flex="820px">
+                    <Col flex="750px">
                         <h2>理解能力</h2>
                         <div id={this.props.name + "comprehensionDetail"}></div>
                     </Col>
-                    <Col flex="820px">
+                    <Col flex="750px">
                         <h2>沟通能力</h2>
                         <div id={this.props.name + "communicationDetail"}></div>
                     </Col>

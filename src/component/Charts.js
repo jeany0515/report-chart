@@ -7,9 +7,12 @@ import HomeworkScoreChart from './HomeworkScoreChart';
 import AllRankingChart from './AllRankingChart';
 import HomeworkQualityRankingChart from './HomeworkQualityRankingChart';
 import AbilityRankingChart from './AbilityRankingChart';
-import { Divider } from 'antd';
+import { Divider, Card, Row, Col, Avatar } from 'antd';
 import PersonalGroupChart from './PersonalGroupChart';
 import DataService from '../service/DataService';
+import { UserOutlined } from '@ant-design/icons';
+
+const { Meta } = Card;
 
 export default class Charts extends Component {
     static propTypes = {
@@ -31,15 +34,19 @@ export default class Charts extends Component {
                 <HomeworkQualityRankingChart />
                 <Divider />
                 <HomeworkScoreChart />
-                <Divider orientation="center" style={{ color: '#333', fontWeight: 'normal' }}>
-                    以下是每个学员的详细统计报表
-                </Divider>
-                {
-                    trainees.map((trainee) => (
-                        <PersonalGroupChart key={trainee.name} name={trainee.name} />
-                    ))
-                }
-                <Divider />
+                <div style={{ background: "#ececec", padding: "30px" }}>
+                    {
+                        trainees.map((trainee) => (
+                            <Row style={{ margin: "25px" }}>
+                                <Col span={24}>
+                                    <Card title={trainee.name + "的详细报告"} description="This is the description" bordered={true}>
+                                        <PersonalGroupChart key={trainee.name} name={trainee.name} />
+                                    </Card>
+                                </Col>
+                            </Row>
+                        ))
+                    }
+                </div>
             </div>
         )
     }
