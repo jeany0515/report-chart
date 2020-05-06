@@ -1,10 +1,10 @@
+import data from '../data/data.json'
+
 class DataService {
     static getTraineesData() {
-        return [
-            { name: "张三" },
-            { name: "王五" },
-            { name: "李四" }
-        ]
+        return data.学习平台积分.map((trainee) => {
+            return { name: trainee.名字 };
+        })
     }
 
     static getOverviewLevelData() {
