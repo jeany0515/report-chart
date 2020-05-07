@@ -1,4 +1,10 @@
 import data from '../data/data.json'
+import {
+    DEFAULT_OUTSTANDING_LINE,
+    DEFAULT_GOOD_LINE,
+    DEFAULT_COMPETENT_LINE,
+    DEFAULT_DEVELOPING_LINE
+} from "../constants/constants";
 
 class DataService {
     static getTraineesData() {
@@ -8,24 +14,20 @@ class DataService {
     }
 
     static getOverviewLevelData() {
-        // const outstandingLine = 320
-        // const goodLine = 300
-        // const competentLine = 280
-        // const developingLine = 240
-        // const marginalLine = 230
-        // const totalScores = data.总分.filter(allScores => allScores.维度 === "总分")[0]
-        // const allScores = Object.values(totalScores).filter(score => score !== "总分");
-        // const outstanding = allScores.filter(score => score > outstandingLine).length
-        // const good = allScores.filter(score => score > goodLine && score < outstandingLine).length
-        // const competent = allScores.filter(score => score > competentLine && score < goodLine).length
-        // const developing = allScores.filter(score => score > developingLine && score < competentLine).length
-        // const marginal = allScores.filter(score => score < developingLine).length
+        const allScores = data.总分.map(trainee => {
+            return trainee.总分
+        })
+        const outstanding = allScores.filter(score => score > DEFAULT_OUTSTANDING_LINE).length
+        const good = allScores.filter(score => score > DEFAULT_GOOD_LINE && score < DEFAULT_OUTSTANDING_LINE).length
+        const competent = allScores.filter(score => score > DEFAULT_COMPETENT_LINE && score < DEFAULT_GOOD_LINE).length
+        const developing = allScores.filter(score => score > DEFAULT_DEVELOPING_LINE && score < DEFAULT_COMPETENT_LINE).length
+        const marginal = allScores.filter(score => score < DEFAULT_DEVELOPING_LINE).length
         return [
-            { item: 'Outstanding', percent: 0.2 },
-            { item: 'Good', percent: 0.3 },
-            { item: 'Competent', percent: 0.35 },
-            { item: 'Developing', percent: 0.1 },
-            { item: 'Mariginal', percent: 0.05 },
+            { item: 'Outstanding', percent: outstanding / allScores.length },
+            { item: 'Good', percent: good / allScores.length },
+            { item: 'Competent', percent: competent / allScores.length },
+            { item: 'Developing', percent: developing / allScores.length },
+            { item: 'Mariginal', percent: marginal / allScores.length },
         ];
     }
 
@@ -169,7 +171,7 @@ class DataService {
         const qualities = data.作业质量.map(quality => {
             return { name: quality.名字, score: parseInt(quality.总分) }
         })
-        qualities.sort(function(a, b){return a.score - b.score})
+        qualities.sort(function (a, b) { return a.score - b.score })
         return qualities
     }
 
