@@ -156,19 +156,12 @@ class DataService {
     }
 
     static getTraineeAbiltiyRadarData(name) {
-        if (name === '张三') {
-            return [
-                { item: '学习能力', 张三: 30 },
-                { item: '技术能力', 张三: 36 },
-                { item: '理解能力', 张三: 27 },
-                { item: '沟通能力', 张三: 23 }
-            ];
-        }
+        const trainee = data.总分.filter(trainee => trainee.名字 === name)[0]
         return [
-            { item: '学习能力', 李四: 10 },
-            { item: '技术能力', 李四: 36 },
-            { item: '理解能力', 李四: 37 },
-            { item: '沟通能力', 李四: 33 }
+            { item: '技术能力', score: parseInt(trainee.技术能力) },
+            { item: '学习能力', score: parseInt(trainee.学习能力) },
+            { item: '理解能力', score: parseInt(trainee.理解能力) },
+            { item: '沟通能力', score: parseInt(trainee.沟通能力) }
         ];
     }
 

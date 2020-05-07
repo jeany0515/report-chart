@@ -14,7 +14,7 @@ export default class TraineeAbilityRadarChart extends Component {
         const dv = new DataView().source(data);
         dv.transform({
             type: 'fold',
-            fields: [name], // 展开字段集
+            fields: ['score'], // 展开字段集
             key: 'user', // key字段
             value: 'score', // value字段
         });
@@ -27,7 +27,7 @@ export default class TraineeAbilityRadarChart extends Component {
         chart.data(dv.rows);
         chart.scale('score', {
             min: 0,
-            max: 40,
+            max: 160,
         });
         chart.coordinate('polar', {
             radius: 0.8,
@@ -98,7 +98,7 @@ export default class TraineeAbilityRadarChart extends Component {
     render() {
         return (
             <div>
-                <h1>学员能力图</h1>
+                <h1>{this.props.name}能力图</h1>
                 <div id={this.props.name + "ability"}>
                 </div>
             </div>
