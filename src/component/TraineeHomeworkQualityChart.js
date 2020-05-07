@@ -35,7 +35,7 @@ export default class TraineeHomeworkQualityChart extends Component {
             .annotation()
             .text({
                 position: ['50%', '50%'],
-                content: '张三作业质量概览',
+                content: this.props.name + '的作业质量概览',
                 style: {
                     fontSize: 14,
                     fill: '#8c8c8c',
@@ -70,7 +70,7 @@ export default class TraineeHomeworkQualityChart extends Component {
     render() {
         return (
             <div>
-                <h1>学员作业质量总揽</h1>
+                <h1>{this.props.name}的作业质量总揽</h1>
                 <div id={this.props.name + "quality"}></div>
             </div>
         )
