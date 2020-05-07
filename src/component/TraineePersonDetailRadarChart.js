@@ -5,13 +5,19 @@ import DataSet from '@antv/data-set';
 import { Row, Col, Divider } from 'antd';
 import 'antd/dist/antd.css';
 import DataService from '../service/DataService';
+import {
+    TECHNOLOGY,
+    LEARNING,
+    COMPREHENSION,
+    COMMUNICATION
+} from "../constants/constants";
 
 export default class TraineePersonDetailRadarChart extends Component {
     static propTypes = {
         prop: PropTypes
     }
 
-    renderRadarChart(containerId, data, name) {
+    renderRadarChart(containerId, data) {
         const { DataView } = DataSet;
         const dv = new DataView().source(data);
         dv.transform({
@@ -94,10 +100,10 @@ export default class TraineePersonDetailRadarChart extends Component {
     }
 
     componentDidMount() {
-        this.renderRadarChart(this.props.name + "techDetail", DataService.getTraineeDetailData(this.props.name, 'tech'), this.props.name)
-        this.renderRadarChart(this.props.name + "learnDetail", DataService.getTraineeDetailData(this.props.name, 'learn'), this.props.name)
-        this.renderRadarChart(this.props.name + "comprehensionDetail", DataService.getTraineeDetailData(this.props.name, 'comprehension'), this.props.name)
-        this.renderRadarChart(this.props.name + "communicationDetail", DataService.getTraineeDetailData(this.props.name, 'communication'), this.props.name)
+        this.renderRadarChart(this.props.name + "techDetail", DataService.getTraineeDetailData(this.props.name, TECHNOLOGY))
+        this.renderRadarChart(this.props.name + "learnDetail", DataService.getTraineeDetailData(this.props.name, LEARNING))
+        this.renderRadarChart(this.props.name + "comprehensionDetail", DataService.getTraineeDetailData(this.props.name, COMPREHENSION))
+        this.renderRadarChart(this.props.name + "communicationDetail", DataService.getTraineeDetailData(this.props.name, COMMUNICATION))
     }
 
     render() {

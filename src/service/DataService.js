@@ -27,7 +27,11 @@ import {
     GOOD,
     COMPETENT,
     DEVELOPING,
-    MARGINAL
+    MARGINAL,
+    TECH_BEHAVIORS,
+    LEARN_BEHAVIORS,
+    COMPREHENSION_BEHAVIORS,
+    COMMUNICATION_BEHAVIORS
 } from "../constants/constants";
 
 class DataService {
@@ -196,52 +200,17 @@ class DataService {
     }
 
     static getTraineeDetailData(name, category) {
-        if (name === '张三') {
+        const allScores = data[name].map(item => {
+            return { item: item.行为, score: parseInt(item.各项总分) }
+        })
+        if (category === TECHNOLOGY) {
+            return allScores.filter(score => TECH_BEHAVIORS.includes(score.item))
+        } else if (category === LEARNING) {
+            return allScores.filter(score => LEARN_BEHAVIORS.includes(score.item))
+        } else if (category === COMPREHENSION) {
+            return allScores.filter(score => COMPREHENSION_BEHAVIORS.includes(score.item))
         }
-        if (category === 'tech') {
-            return [
-                { item: '每次练习都有写测试', score: 20 },
-                { item: '代码设计符合OO思想', score: 15 },
-                { item: '每次练习都能做到职责单一', score: 10 },
-                { item: '有较快的编码速度完成练习', score: 14 },
-                { item: '能通过搜集信息快速定位问题', score: 16 },
-                { item: '能独立使用新框架(Spring/React等)完成练习', score: 7 },
-                { item: '能快速定位解决bug或问题', score: 17 },
-                { item: '代码编写满足clean code', score: 12 }
-            ];
-        } else if (category === 'learn') {
-            return [
-                { item: '每次练习都能小步提交', score: 20 },
-                { item: '每次练习都能TDD', score: 15 },
-                { item: '能积极参与code review', score: 20 },
-                { item: '坚持每日写总结', score: 14 },
-                { item: '能借助常见的工具帮助自己独立解决问题', score: 16 },
-                { item: '能独立上手新工具和框架', score: 20 },
-                { item: '能熟练使用IDE的快捷键', score: 17 },
-                { item: '每次练习都有持续重构', score: 12 }
-            ];
-        } else if (category === 'comprehension') {
-            return [
-                { item: '每次练习之前都做Tasking', score: 20 },
-                { item: '能接受别人的反馈并改进', score: 15 },
-                { item: '每次练习都做到需求澄清', score: 10 },
-                { item: '能理解每次练习的需求', score: 18 },
-                { item: '能发现他人代码中的问题', score: 16 },
-                { item: '能理解新知识', score: 20 },
-                { item: '能使用有业务意义的git commit', score: 17 },
-                { item: '能使用有业务意义的代码命名', score: 18 }
-            ];
-        }
-        return [
-            { item: '能积极帮助其他组员解决问题', score: 20 },
-            { item: '能积极参与小组内讨论', score: 15 },
-            { item: '能清楚表达自己的观点或问题', score: 19 },
-            { item: '能积极参与showcase', score: 14 },
-            { item: '能积极回答问题', score: 16 },
-            { item: '能积极寻求帮助', score: 2 },
-            { item: '能积极给出Code Review反馈', score: 17 },
-            { item: '能积极分享观点、技能', score: 16 }
-        ];
+        return allScores.filter(score => COMMUNICATION_BEHAVIORS.includes(score.item))
     }
 }
 
