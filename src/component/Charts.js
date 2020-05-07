@@ -20,6 +20,7 @@ export default class Charts extends Component {
         let trainees = DataService.getTraineesData()
         return (
             <div>
+                <Divider />
                 <OverviewLevelChart />
                 <Divider />
                 <OverviewAbilitiesChart />
