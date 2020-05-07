@@ -3,7 +3,16 @@ import {
     DEFAULT_OUTSTANDING_LINE,
     DEFAULT_GOOD_LINE,
     DEFAULT_COMPETENT_LINE,
-    DEFAULT_DEVELOPING_LINE
+    DEFAULT_DEVELOPING_LINE,
+    TECHNOLOGY,
+    LEARNING,
+    COMPREHENSION,
+    COMMUNICATION,
+    OUTSTANDING,
+    GOOD,
+    COMPETENT,
+    DEVELOPING,
+    MARGINAL
 } from "../constants/constants";
 
 class DataService {
@@ -23,22 +32,22 @@ class DataService {
         const developing = allScores.filter(score => score > DEFAULT_DEVELOPING_LINE && score < DEFAULT_COMPETENT_LINE).length
         const marginal = allScores.filter(score => score < DEFAULT_DEVELOPING_LINE).length
         return [
-            { item: 'Outstanding', percent: outstanding / allScores.length },
-            { item: 'Good', percent: good / allScores.length },
-            { item: 'Competent', percent: competent / allScores.length },
-            { item: 'Developing', percent: developing / allScores.length },
-            { item: 'Mariginal', percent: marginal / allScores.length },
+            { item: OUTSTANDING, percent: outstanding / allScores.length },
+            { item: GOOD, percent: good / allScores.length },
+            { item: COMPETENT, percent: competent / allScores.length },
+            { item: DEVELOPING, percent: developing / allScores.length },
+            { item: MARGINAL, percent: marginal / allScores.length },
         ];
     }
 
     static getOverviewAbilitiesData(category) {
         if (category === 'tech') {
             return [
-                { item: 'Outstanding', count: 40, percent: 0.4 },
-                { item: 'Good', count: 21, percent: 0.21 },
-                { item: 'Competent', count: 17, percent: 0.17 },
-                { item: 'Developing', count: 13, percent: 0.13 },
-                { item: 'Mariginal', count: 9, percent: 0.09 },
+                { item: OUTSTANDING, count: 40, percent: 0.4 },
+                { item: GOOD, count: 21, percent: 0.21 },
+                { item: COMPETENT, count: 17, percent: 0.17 },
+                { item: DEVELOPING, count: 13, percent: 0.13 },
+                { item: MARGINAL, count: 9, percent: 0.09 },
             ];
         } else if (category === 'learn') {
             return [
