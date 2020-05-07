@@ -8,24 +8,24 @@ class DataService {
     }
 
     static getOverviewLevelData() {
-        const outstandingLine = 320
-        const goodLine = 300
-        const competentLine = 280
-        const developingLine = 240
-        const marginalLine = 230
-        const totalScores = data.总分.filter(allScores => allScores.维度 === "总分")[0]
-        const allScores = Object.values(totalScores).filter(score => score !== "总分");
-        const outstanding = allScores.filter(score => score > outstandingLine).length
-        const good = allScores.filter(score => score > goodLine && score < outstandingLine).length
-        const competent = allScores.filter(score => score > competentLine && score < goodLine).length
-        const developing = allScores.filter(score => score > developingLine && score < competentLine).length
-        const marginal = allScores.filter(score => score < developingLine).length
+        // const outstandingLine = 320
+        // const goodLine = 300
+        // const competentLine = 280
+        // const developingLine = 240
+        // const marginalLine = 230
+        // const totalScores = data.总分.filter(allScores => allScores.维度 === "总分")[0]
+        // const allScores = Object.values(totalScores).filter(score => score !== "总分");
+        // const outstanding = allScores.filter(score => score > outstandingLine).length
+        // const good = allScores.filter(score => score > goodLine && score < outstandingLine).length
+        // const competent = allScores.filter(score => score > competentLine && score < goodLine).length
+        // const developing = allScores.filter(score => score > developingLine && score < competentLine).length
+        // const marginal = allScores.filter(score => score < developingLine).length
         return [
-            { item: 'Outstanding', percent: outstanding/allScores.length },
-            { item: 'Good', percent: good/allScores.length },
-            { item: 'Competent', percent: competent/allScores.length },
-            { item: 'Developing', percent: developing/allScores.length },
-            { item: 'Mariginal', percent: marginal/allScores.length },
+            { item: 'Outstanding', percent: 0.2 },
+            { item: 'Good', percent: 0.3 },
+            { item: 'Competent', percent: 0.35 },
+            { item: 'Developing', percent: 0.1 },
+            { item: 'Mariginal', percent: 0.05 },
         ];
     }
 
@@ -190,24 +190,6 @@ class DataService {
         return data.学习平台积分.map((trainee) => {
             return { name: trainee.名字, score: trainee.平台积分 }
         })
-        // return [
-        //     { country: '李是', population: 650 },
-        //     { country: '李你好', population: 699 },
-        //     { country: '李不是', population: 700 },
-        //     { country: '李看空', population: 732 },
-        //     { country: '李不能', population: 750 },
-        //     { country: '李哈哈', population: 789 },
-        //     { country: '李还是', population: 799 },
-        //     { country: '李好', population: 821 },
-        //     { country: '李他', population: 840 },
-        //     { country: '李分到', population: 870 },
-        //     { country: '李地方', population: 900 },
-        //     { country: '李七', population: 902 },
-        //     { country: '赵六', population: 1000 },
-        //     { country: '王五', population: 1100 },
-        //     { country: '李四', population: 1220 },
-        //     { country: '张三', population: 1320 },
-        // ];
     }
 
     static getTraineeAbiltiyRadarData(name) {
