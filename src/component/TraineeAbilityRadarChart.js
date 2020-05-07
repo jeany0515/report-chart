@@ -98,7 +98,7 @@ export default class TraineeAbilityRadarChart extends Component {
     render() {
         return (
             <div>
-                <h1>{this.props.name}能力图</h1>
+                <h1>{this.props.name}的能力图</h1>
                 <div id={this.props.name + "ability"}>
                 </div>
             </div>

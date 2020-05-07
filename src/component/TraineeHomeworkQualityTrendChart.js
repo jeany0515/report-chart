@@ -17,7 +17,7 @@ export default class TraineeHomeworkQualityTrendChart extends Component {
 
         chart.data(DataService.getTraineeHomeworkQualityTrendData(this.props.name));
         chart.scale({
-            year: {
+            item: {
                 range: [0, 1],
             },
             value: {
@@ -31,8 +31,8 @@ export default class TraineeHomeworkQualityTrendChart extends Component {
             shared: true,
         });
 
-        chart.line().position('year*value').label('value');
-        chart.point().position('year*value');
+        chart.line().position('item*value').label('value');
+        chart.point().position('item*value');
 
         chart.render();
     }
@@ -40,7 +40,7 @@ export default class TraineeHomeworkQualityTrendChart extends Component {
     render() {
         return (
             <div>
-                <h1>每次作业质量走势图</h1>
+                <h1>{this.props.name}的每次作业质量走势图</h1>
                 <div id={this.props.name}>
                 </div>
             </div>
