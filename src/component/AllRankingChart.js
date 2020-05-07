@@ -36,7 +36,7 @@ export default class AllRankingChart extends Component {
 
     render() {
         return (
-            <div>
+            <div style={{margin: "50px"}}>
                 <h1>总排名</h1>
                 <p>所有学员总体能力得分的综合排名</p>
                 <div id='allRanking'>
