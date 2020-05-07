@@ -176,14 +176,22 @@ class DataService {
     }
 
     static getTraineeHomeworkQualityData(name) {
-        if (name === '张三') {
-        }
+        const trainee = data.作业质量.filter(trainee => trainee.名字 === name)[0]
+        const homeworkNames = Object.keys(trainee)
+        homeworkNames.splice(homeworkNames.indexOf('名字'), 1)
+        homeworkNames.splice(homeworkNames.indexOf('总分'), 1)
+        const allScores = homeworkNames.map(name => parseInt(trainee[name]))
+        const outstanding = allScores.filter(score => score === 5).length
+        const good = allScores.filter(score => score === 4).length
+        const competent = allScores.filter(score => score === 3).length
+        const developing = allScores.filter(score => score === 2).length
+        const marginal = allScores.filter(score => score === 1).length
         return [
-            { item: 'Outstanding', count: 40, percent: 0.4 },
-            { item: 'Good', count: 21, percent: 0.21 },
-            { item: 'Competent', count: 17, percent: 0.17 },
-            { item: 'Developing', count: 13, percent: 0.13 },
-            { item: 'Mariginal', count: 9, percent: 0.09 },
+            { item: OUTSTANDING, percent: outstanding / allScores.length },
+            { item: GOOD, percent: good / allScores.length },
+            { item: COMPETENT, percent: competent / allScores.length },
+            { item: DEVELOPING, percent: developing / allScores.length },
+            { item: MARGINAL, percent: marginal / allScores.length },
         ];
     }
 
