@@ -3,6 +3,12 @@ import PropTypes from 'prop-types'
 import { Chart } from '@antv/g2';
 import { Row, Col } from 'antd';
 import DataService from '../service/DataService';
+import {
+    TECHNOLOGY,
+    LEARNING,
+    COMPREHENSION,
+    COMMUNICATION
+} from "../constants/constants";
 
 export default class AbilityRankingChart extends Component {
     static propTypes = {
@@ -17,28 +23,28 @@ export default class AbilityRankingChart extends Component {
         });
 
         chart.data(data);
-        chart.scale('population', { nice: true });
+        chart.scale('score', { nice: true });
         chart.coordinate().transpose();
         chart.tooltip({
             showMarkers: false
         });
         chart.interaction('active-region');
         chart.interval()
-        .position('country*population')
-        .label('population', {
-            offset: -10,
-            content: (data) => {
-              return data.population;
-            }
-          });
+            .position('name*score')
+            .label('score', {
+                offset: -10,
+                content: (data) => {
+                    return data.score;
+                }
+            });
         chart.render();
     }
 
     componentDidMount() {
-        this.renderAbilityRankingChart('techRanking', DataService.getAbilityRankingData('tech'));
-        this.renderAbilityRankingChart('learnRanking', DataService.getAbilityRankingData('learn'));
-        this.renderAbilityRankingChart('comprehensionRanking', DataService.getAbilityRankingData('comprehension'));
-        this.renderAbilityRankingChart('communicationRanking', DataService.getAbilityRankingData('communication'));
+        this.renderAbilityRankingChart('techRanking', DataService.getAbilityRankingData(TECHNOLOGY));
+        this.renderAbilityRankingChart('learnRanking', DataService.getAbilityRankingData(LEARNING));
+        this.renderAbilityRankingChart('comprehensionRanking', DataService.getAbilityRankingData(COMPREHENSION));
+        this.renderAbilityRankingChart('communicationRanking', DataService.getAbilityRankingData(COMMUNICATION));
     }
 
     render() {
