@@ -4,6 +4,12 @@ import 'antd/dist/antd.css';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import DataService from '../service/DataService';
+import {
+    TECHNOLOGY,
+    LEARNING,
+    COMPREHENSION,
+    COMMUNICATION
+} from "../constants/constants";
 
 export default class OverviewAbilitiesChart extends Component {
     static propTypes = {
@@ -70,10 +76,10 @@ export default class OverviewAbilitiesChart extends Component {
 
     componentDidMount() {
         
-        this.renderChart('tech', DataService.getOverviewAbilitiesData('tech'), '技术能力')
-        this.renderChart('learn', DataService.getOverviewAbilitiesData('learn'), '学习能力')
-        this.renderChart('comprehension', DataService.getOverviewAbilitiesData('comprehension'), '理解能力')
-        this.renderChart('communication', DataService.getOverviewAbilitiesData('communication'), '沟通能力')
+        this.renderChart('tech', DataService.getOverviewAbilitiesData(TECHNOLOGY), '技术能力')
+        this.renderChart('learn', DataService.getOverviewAbilitiesData(LEARNING), '学习能力')
+        this.renderChart('comprehension', DataService.getOverviewAbilitiesData(COMPREHENSION), '理解能力')
+        this.renderChart('communication', DataService.getOverviewAbilitiesData(COMMUNICATION), '沟通能力')
     }
 
     render() {

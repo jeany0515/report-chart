@@ -4,10 +4,25 @@ import {
     DEFAULT_GOOD_LINE,
     DEFAULT_COMPETENT_LINE,
     DEFAULT_DEVELOPING_LINE,
+    TECH_OUTSTANDING_LINE,
+    TECH_GOOD_LINE,
+    TECH_COMPETENT_LINE,
+    TECH_DEVELOPING_LINE,
+    LEARN_OUTSTANDING_LINE,
+    LEARN_GOOD_LINE,
+    LEARN_COMPETENT_LINE,
+    LEARN_DEVELOPING_LINE,
+    COMPREHENSION_OUTSTANDING_LINE,
+    COMPREHENSION_GOOD_LINE,
+    COMPREHENSION_COMPETENT_LINE,
+    COMPREHENSION_DEVELOPING_LINE,
+    COMMUNICATION_OUTSTANDING_LINE,
+    COMMUNICATION_GOOD_LINE,
+    COMMUNICATION_COMPETENT_LINE,
+    COMMUNICATION_DEVELOPING_LINE,
     TECHNOLOGY,
     LEARNING,
     COMPREHENSION,
-    COMMUNICATION,
     OUTSTANDING,
     GOOD,
     COMPETENT,
@@ -26,53 +41,69 @@ class DataService {
         const allScores = data.总分.map(trainee => {
             return trainee.总分
         })
-        const outstanding = allScores.filter(score => score > DEFAULT_OUTSTANDING_LINE).length
-        const good = allScores.filter(score => score > DEFAULT_GOOD_LINE && score < DEFAULT_OUTSTANDING_LINE).length
-        const competent = allScores.filter(score => score > DEFAULT_COMPETENT_LINE && score < DEFAULT_GOOD_LINE).length
-        const developing = allScores.filter(score => score > DEFAULT_DEVELOPING_LINE && score < DEFAULT_COMPETENT_LINE).length
-        const marginal = allScores.filter(score => score < DEFAULT_DEVELOPING_LINE).length
+        return this.getPercentData(allScores,
+            DEFAULT_OUTSTANDING_LINE,
+            DEFAULT_GOOD_LINE,
+            DEFAULT_COMPETENT_LINE,
+            DEFAULT_DEVELOPING_LINE)
+    }
+
+    static getPercentData(scores,
+        outstandingLine,
+        goodLine,
+        competentLine,
+        developingLine) {
+        const outstanding = scores.filter(score => score > outstandingLine).length
+        const good = scores.filter(score => score > goodLine && score < outstandingLine).length
+        const competent = scores.filter(score => score > competentLine && score < goodLine).length
+        const developing = scores.filter(score => score > developingLine && score < competentLine).length
+        const marginal = scores.filter(score => score < developingLine).length
         return [
-            { item: OUTSTANDING, percent: outstanding / allScores.length },
-            { item: GOOD, percent: good / allScores.length },
-            { item: COMPETENT, percent: competent / allScores.length },
-            { item: DEVELOPING, percent: developing / allScores.length },
-            { item: MARGINAL, percent: marginal / allScores.length },
+            { item: OUTSTANDING, percent: outstanding / scores.length },
+            { item: GOOD, percent: good / scores.length },
+            { item: COMPETENT, percent: competent / scores.length },
+            { item: DEVELOPING, percent: developing / scores.length },
+            { item: MARGINAL, percent: marginal / scores.length },
         ];
     }
 
     static getOverviewAbilitiesData(category) {
-        if (category === 'tech') {
-            return [
-                { item: OUTSTANDING, count: 40, percent: 0.4 },
-                { item: GOOD, count: 21, percent: 0.21 },
-                { item: COMPETENT, count: 17, percent: 0.17 },
-                { item: DEVELOPING, count: 13, percent: 0.13 },
-                { item: MARGINAL, count: 9, percent: 0.09 },
-            ];
-        } else if (category === 'learn') {
-            return [
-                { item: 'Outstanding', count: 2, percent: 0.1 },
-                { item: 'Good', count: 10, percent: 0.4 },
-                { item: 'Competent', count: 5, percent: 0.2 },
-                { item: 'Developing', count: 3, percent: 0.2 },
-                { item: 'Mariginal', count: 1, percent: 0.1 },
-            ];
-        } else if (category === 'comprehension') {
-            return [
-                { item: 'Outstanding', count: 2, percent: 0.1 },
-                { item: 'Good', count: 10, percent: 0.4 },
-                { item: 'Competent', count: 5, percent: 0.2 },
-                { item: 'Developing', count: 3, percent: 0.2 },
-                { item: 'Mariginal', count: 1, percent: 0.1 },
-            ];
+        if (category === TECHNOLOGY) {
+            const techSocres = data.总分.map(trainee => {
+                return trainee.技术能力
+            })
+            return this.getPercentData(techSocres,
+                TECH_OUTSTANDING_LINE,
+                TECH_GOOD_LINE,
+                TECH_COMPETENT_LINE,
+                TECH_DEVELOPING_LINE)
+        } else if (category === LEARNING) {
+            const learningSocres = data.总分.map(trainee => {
+                return trainee.学习能力
+            })
+            return this.getPercentData(learningSocres,
+                LEARN_OUTSTANDING_LINE,
+                LEARN_GOOD_LINE,
+                LEARN_COMPETENT_LINE,
+                LEARN_DEVELOPING_LINE)
+        } else if (category === COMPREHENSION) {
+            const comprehensionSocres = data.总分.map(trainee => {
+                return trainee.理解能力
+            })
+            return this.getPercentData(comprehensionSocres,
+                COMPREHENSION_OUTSTANDING_LINE,
+                COMPREHENSION_GOOD_LINE,
+                COMPREHENSION_COMPETENT_LINE,
+                COMPREHENSION_DEVELOPING_LINE)
         }
-        return [
-            { item: 'Outstanding', count: 2, percent: 0.1 },
-            { item: 'Good', count: 10, percent: 0.4 },
-            { item: 'Competent', count: 5, percent: 0.2 },
-            { item: 'Developing', count: 3, percent: 0.2 },
-            { item: 'Mariginal', count: 1, percent: 0.1 },
-        ];
+        const communicationSocres = data.总分.map(trainee => {
+            return trainee.沟通能力
+        })
+        return this.getPercentData(communicationSocres,
+            COMMUNICATION_OUTSTANDING_LINE,
+            COMMUNICATION_GOOD_LINE,
+            COMMUNICATION_COMPETENT_LINE,
+            COMMUNICATION_DEVELOPING_LINE)
     }
 
     static getAbilityRankingData(category) {
