@@ -29,9 +29,14 @@ export default class Charts extends Component {
                 <Divider />
                 <AllRankingChart />
                 <Divider />
-                <HomeworkQualityRankingChart />
-                <Divider />
-                <HomeworkScoreChart />
+                <Row>
+                    <Col flex="820px" style={{ padding: "10px" }}>
+                        <HomeworkQualityRankingChart />
+                    </Col>
+                    <Col flex="820px" style={{ padding: "10px" }}>
+                        <HomeworkScoreChart />
+                    </Col>
+                </Row>
                 <div style={{ background: "#ececec", padding: "30px" }}>
                     {
                         trainees.map((trainee) => (
