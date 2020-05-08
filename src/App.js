@@ -18,7 +18,9 @@ function App() {
         </h6>
       </header>
       <Charts />
-      <p style={{ background: "#ececec"}}>©ThoughtWorks 2020 Commercial in Confidence</p>
+      <div style={{ background: "white" }}>
+        <p >©ThoughtWorks 2020 Commercial in Confidence</p>
+      </div>
     </div>
   );
 }
