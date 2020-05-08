@@ -51,7 +51,7 @@ export default class OverviewLevelChart extends Component {
     render() {
         return (
             <div>
-                <h1>学员等级总揽</h1>
+                <h1>学员等级总览</h1>
                 <p>根据学员整体表现情况统计的结果</p>
                 <div id="c1"></div>
             </div>

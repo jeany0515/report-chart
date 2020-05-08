@@ -70,7 +70,7 @@ export default class TraineeHomeworkQualityChart extends Component {
     render() {
         return (
             <div>
-                <h1>{this.props.name}的作业质量总揽</h1>
+                <h1>{this.props.name}的作业质量总览</h1>
                 <div id={this.props.name + "quality"}></div>
             </div>
         )
