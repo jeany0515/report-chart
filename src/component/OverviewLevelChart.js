@@ -22,7 +22,7 @@ export default class OverviewLevelChart extends Component {
 
         chart.scale('percent', {
             formatter: (val) => {
-                val = val * 100 + '%';
+                val = parseInt(val * 100) + '%';
                 return val;
             },
         });
