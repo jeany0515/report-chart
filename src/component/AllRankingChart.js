@@ -16,7 +16,9 @@ export default class AllRankingChart extends Component {
         });
 
         chart.data(DataService.getAllRankingData());
-        chart.scale('score', { nice: true });
+        chart.scale('score', { 
+            nice: true,
+            });
         chart.coordinate().transpose();
         chart.tooltip({
             showMarkers: false
