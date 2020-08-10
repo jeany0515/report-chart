@@ -9,15 +9,15 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={afs} alt="logo" width='100px' align='right' />
-        <img src={academy} alt="logo" height='200px' />
-        <img src={oocl} alt="logo" height='100px' />
-        <h1 style={{ color: 'white' }}>
+        <img src={afs} alt="logo" width='160px' style={{ paddingTop: '10px' }} />
+        <h1 style={{ color: 'white', textAlign: 'center' }}>
           2020 OOCL ITA AFS Bootcamp 报告
         </h1>
-        <h6 style={{ color: 'white' }}>
-          7月20日 - 8月14日
-        </h6>
+        <h6 style={{ color: 'white', textAlign: 'center' }}>7月20日 - 8月14日</h6>
+        <div style={{ textAlign: "right" }}>
+          <img src={oocl} alt="logo" height='40px' style={{ marginRight: '20px' }} />
+          <img src={academy} alt="logo" height='56px' />
+        </div>
       </header>
       <Charts />
       <div style={{ background: "white" }}>
