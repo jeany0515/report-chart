@@ -13,4 +13,4 @@
 如果数据解析错误，就看`DataService.js`，可能是数据格式导致的。Excel的数据格式要和`DataService.js`保持完全一致。
 
 Excel to Json 在线工具
-http//beautifytools.com/excel-to-json-converter.php
+http://beautifytools.com/excel-to-json-converter.php

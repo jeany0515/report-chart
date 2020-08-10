@@ -1,6 +1,7 @@
 import React from 'react';
-import thoughtworks from './thoughtworks.png'
-import afs from './afs.png'
+import academy from './images/academy.png'
+import oocl from './images/OOCL_logo.svg'
+import afs from './images/afs_logo2.png'
 import './App.css';
 import Charts from './component/Charts';
 
@@ -9,12 +10,13 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={afs} alt="logo" width='100px' align='right' />
-        <img src={thoughtworks} alt="logo" height='100px' />
+        <img src={academy} alt="logo" height='200px' />
+        <img src={oocl} alt="logo" height='100px' />
         <h1 style={{ color: 'white' }}>
-          2020 XXXX AFS Bootcamp 报告
+          2020 OOCL ITA AFS Bootcamp 报告
         </h1>
         <h6 style={{ color: 'white' }}>
-          5月1日 - 5月29日
+          7月20日 - 8月14日
         </h6>
       </header>
       <Charts />
