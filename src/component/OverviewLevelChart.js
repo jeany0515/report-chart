@@ -38,7 +38,7 @@ export default class OverviewLevelChart extends Component {
             .color('item')
             .label('percent', {
                 content: (data) => {
-                    return `${data.item}: ${data.percent * 100}%`;
+                    return `${data.item}: ${parseInt(data.percent * 100)}%`;
                 },
             })
             .adjust('stack');

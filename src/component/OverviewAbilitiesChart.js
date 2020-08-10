@@ -57,12 +57,12 @@ export default class OverviewAbilitiesChart extends Component {
             .label('percent', (percent) => {
                 return {
                     content: (data) => {
-                        return `${data.item}: ${percent * 100}%`;
+                        return `${data.item}: ${parseInt(percent * 100)}%`;
                     },
                 };
             })
             .tooltip('item*percent', (item, percent) => {
-                percent = percent * 100 + '%';
+                percent = parseInt(percent * 100) + '%';
                 return {
                     name: item,
                     value: percent,
