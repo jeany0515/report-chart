@@ -1,6 +1,6 @@
 import React from 'react';
 import academy from './images/academy.png'
-import oocl from './images/OOCL_logo.svg'
+import customer from './images/customer_logo.svg'
 import afs from './images/afs_logo2.png'
 import './App.css';
 import Charts from './component/Charts';
@@ -15,7 +15,7 @@ function App() {
         </h1>
         <h6 style={{ color: 'white', textAlign: 'center' }}>7月20日 - 8月14日</h6>
         <div style={{ textAlign: "right" }}>
-          <img src={oocl} alt="logo" height='40px' style={{ marginRight: '20px' }} />
+          <img src={customer} alt="logo" height='40px' style={{ marginRight: '20px' }} />
           <img src={academy} alt="logo" height='56px' />
         </div>
       </header>
