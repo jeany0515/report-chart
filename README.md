@@ -14,3 +14,7 @@
 
 Excel to Json 在线工具
 http://beautifytools.com/excel-to-json-converter.php
+
+### 注意事项
+- 所有地方学生的名字必须保持一致，包括tab的名字
+- 总分tab的内容不能有额外的内容，不然会解析不准确
