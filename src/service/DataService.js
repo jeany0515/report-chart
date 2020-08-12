@@ -57,10 +57,10 @@ class DataService {
         goodLine,
         competentLine,
         developingLine) {
-        const outstanding = scores.filter(score => score > outstandingLine).length
-        const good = scores.filter(score => score > goodLine && score < outstandingLine).length
-        const competent = scores.filter(score => score > competentLine && score < goodLine).length
-        const developing = scores.filter(score => score > developingLine && score < competentLine).length
+        const outstanding = scores.filter(score => score >= outstandingLine).length
+        const good = scores.filter(score => score >= goodLine && score < outstandingLine).length
+        const competent = scores.filter(score => score >= competentLine && score < goodLine).length
+        const developing = scores.filter(score => score >= developingLine && score < competentLine).length
         const marginal = scores.filter(score => score < developingLine).length
         return [
             { item: OUTSTANDING, percent: outstanding / scores.length },
@@ -139,9 +139,21 @@ class DataService {
 
     static getAllRankingData() {
         const totalScores = data.总分.map(trainee => {
-            return { name: trainee.名字, score: parseInt(trainee.总分) }
+            let category = OUTSTANDING
+            if (parseInt(trainee.总分) > DEFAULT_OUTSTANDING_LINE) {
+                category = OUTSTANDING
+            } else if (parseInt(trainee.总分) > DEFAULT_GOOD_LINE) {
+                category = GOOD
+            } else if (parseInt(trainee.总分) > DEFAULT_COMPETENT_LINE) {
+                category = COMPETENT
+            } else if (parseInt(trainee.总分) > DEFAULT_DEVELOPING_LINE) {
+                category = DEVELOPING
+            } else {
+                category = MARGINAL
+            }
+            return { name: trainee.名字, score: parseInt(trainee.总分), cat: category }
         })
-        totalScores.sort(function (a, b) { return a.score - b.score })
+        totalScores.sort(function (first, second) { return first.score - second.score })
         return totalScores
     }
 
