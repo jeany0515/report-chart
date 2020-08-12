@@ -35,7 +35,7 @@ export default class TraineePersonDetailRadarChart extends Component {
         chart.data(dv.rows);
         chart.scale('score', {
             min: 0,
-            max: 30,
+            max: 40,
         });
         chart.coordinate('polar', {
             radius: 0.8,
