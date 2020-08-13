@@ -71,6 +71,7 @@ export default class AllRankingChart extends Component {
             <div style={{ margin: "50px" }}>
                 <h1>总排名</h1>
                 <p>所有学员总体能力得分的综合排名</p>
+                <p>（技术能力和学习能力权重是3，理解能力和沟通能力权重是2）</p>
                 <div id='allRanking'>
                 </div>
             </div>
