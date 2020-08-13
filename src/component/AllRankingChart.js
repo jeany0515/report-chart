@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Chart } from '@antv/g2';
 import DataService from '../service/DataService';
+import { uniq } from 'lodash';
+import { COLOR_MAP } from "../constants/constants";
 
 export default class AllRankingChart extends Component {
     static propTypes = {
@@ -40,10 +42,13 @@ export default class AllRankingChart extends Component {
         });
         chart.legend(false);
         chart.coordinate('rect').transpose();
+
+        const colors = uniq(data.map(item => item.cat)).map(cat => COLOR_MAP[cat])
+
         chart
             .interval()
             .position('name*score')
-            .color('cat', ['#da7462', '#face1d', '#687795', '#83d7ae', '#2194ff'])
+            .color('cat', colors)
             .size(26)
             .label('score', {
                 style: {
