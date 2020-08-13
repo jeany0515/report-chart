@@ -2,12 +2,14 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Chart } from '@antv/g2';
 import { Row, Col } from 'antd';
+import { maxBy, uniq } from 'lodash';
 import DataService from '../service/DataService';
 import {
     TECHNOLOGY,
     LEARNING,
     COMPREHENSION,
-    COMMUNICATION
+    COMMUNICATION,
+    COLOR_MAP
 } from "../constants/constants";
 
 export default class AbilityRankingChart extends Component {
@@ -15,36 +17,66 @@ export default class AbilityRankingChart extends Component {
         prop: PropTypes
     }
 
-    renderAbilityRankingChart(containerId, data) {
+    renderAbilityRankingChart(containerId, data, levelName) {
         const chart = new Chart({
             container: containerId,
             autoFit: true,
-            height: 500,
+            height: 800,
+            padding: [20, 0, 50, 100],
         });
-
         chart.data(data);
-        chart.scale('score', { nice: true });
-        chart.coordinate().transpose();
-        chart.tooltip({
-            showMarkers: false
+        const max = maxBy(data, d => d.score).score
+        chart.scale({
+            score: {
+                max: max + 20,
+                min: 0,
+                alias: levelName,
+            },
         });
-        chart.interaction('active-region');
-        chart.interval()
+        chart.axis('name', {
+            tickLine: null,
+            line: null,
+        });
+        chart.axis('score', {
+            label: null,
+            title: {
+                offset: 30,
+                style: {
+                    fontWeight: 300,
+                },
+            },
+            grid: null,
+        });
+        chart.legend(false);
+        chart.coordinate('rect').transpose();
+
+        const colors = uniq(data.map(item => item.cat)).map(cat => COLOR_MAP[cat])
+
+        chart
+            .interval()
             .position('name*score')
+            .color('cat', colors)
+            .size(26)
             .label('score', {
-                offset: -10,
-                content: (data) => {
-                    return data.score;
-                }
+                style: {
+                    fill: '#8d8d8d',
+                },
+                offset: 10,
+                content: (originData) => {
+                    return (originData.score);
+                },
             });
+
+        chart.interaction('element-active');
+
         chart.render();
     }
 
     componentDidMount() {
-        this.renderAbilityRankingChart('techRanking', DataService.getAbilityRankingData(TECHNOLOGY));
-        this.renderAbilityRankingChart('learnRanking', DataService.getAbilityRankingData(LEARNING));
-        this.renderAbilityRankingChart('comprehensionRanking', DataService.getAbilityRankingData(COMPREHENSION));
-        this.renderAbilityRankingChart('communicationRanking', DataService.getAbilityRankingData(COMMUNICATION));
+        this.renderAbilityRankingChart('techRanking', DataService.getAbilityRankingData(TECHNOLOGY), TECHNOLOGY);
+        this.renderAbilityRankingChart('learnRanking', DataService.getAbilityRankingData(LEARNING), LEARNING);
+        this.renderAbilityRankingChart('comprehensionRanking', DataService.getAbilityRankingData(COMPREHENSION), COMPREHENSION);
+        this.renderAbilityRankingChart('communicationRanking', DataService.getAbilityRankingData(COMMUNICATION), COMMUNICATION);
     }
 
     render() {

@@ -32,7 +32,7 @@ export const OUTSTANDING = 'Outstanding'
 export const GOOD = 'Good'
 export const COMPETENT = 'Competent'
 export const DEVELOPING = 'Developing'
-export const MARGINAL = 'Mariginal'
+export const MARGINAL = 'Marginal'
 
 export const TECH_BEHAVIORS = [
     '每次练习都有写测试',
@@ -74,3 +74,11 @@ export const COMMUNICATION_BEHAVIORS = [
     '能积极给出Code Review反馈',
     '能积极分享观点、技能'
 ]
+
+export const COLOR_MAP = {
+    Outstanding: '#2194ff',
+    Good: '#83d7ae',
+    Competent: '#687795',
+    Developing: '#face1d',
+    Marginal: '#da7462'
+}

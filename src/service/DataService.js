@@ -113,28 +113,52 @@ class DataService {
     static getAbilityRankingData(category) {
         if (category === TECHNOLOGY) {
             const techScores = data.总分.map(trainee => {
-                return { name: trainee.名字, score: parseInt(trainee.技术能力) }
+                const score = parseInt(trainee.技术能力)
+                const category = this.getLevelName(score, TECH_OUTSTANDING_LINE, TECH_GOOD_LINE, TECH_COMPETENT_LINE, TECH_DEVELOPING_LINE)
+                return { name: trainee.名字, score: score, cat: category }
             })
             techScores.sort(function (a, b) { return a.score - b.score })
             return techScores
         } else if (category === LEARNING) {
             const learnScores = data.总分.map(trainee => {
-                return { name: trainee.名字, score: parseInt(trainee.学习能力) }
+                const score = parseInt(trainee.学习能力)
+                const category = this.getLevelName(score, LEARN_OUTSTANDING_LINE, LEARN_GOOD_LINE, LEARN_COMPETENT_LINE, LEARN_DEVELOPING_LINE)
+                return { name: trainee.名字, score: score, cat: category }
             })
             learnScores.sort(function (a, b) { return a.score - b.score })
             return learnScores
         } else if (category === COMPREHENSION) {
             const compreScores = data.总分.map(trainee => {
-                return { name: trainee.名字, score: parseInt(trainee.理解能力) }
+                const score = parseInt(trainee.理解能力)
+                const category = this.getLevelName(score, COMPREHENSION_OUTSTANDING_LINE, COMPREHENSION_GOOD_LINE, COMPREHENSION_COMPETENT_LINE, COMPREHENSION_DEVELOPING_LINE)
+                return { name: trainee.名字, score: score, cat: category }
             })
             compreScores.sort(function (a, b) { return a.score - b.score })
             return compreScores
         }
         const commuScores = data.总分.map(trainee => {
-            return { name: trainee.名字, score: parseInt(trainee.沟通能力) }
+            const score = parseInt(trainee.沟通能力)
+            const category = this.getLevelName(score, COMMUNICATION_OUTSTANDING_LINE, COMMUNICATION_GOOD_LINE, COMMUNICATION_COMPETENT_LINE, COMMUNICATION_DEVELOPING_LINE)
+            return { name: trainee.名字, score: score, cat: category }
         })
         commuScores.sort(function (a, b) { return a.score - b.score })
         return commuScores
+    }
+
+    static getLevelName(score, outstandingLine, goodLine, competentLine, developingLine) {
+        let category = OUTSTANDING
+        if (parseInt(score) > outstandingLine) {
+            category = OUTSTANDING
+        } else if (parseInt(score) > goodLine) {
+            category = GOOD
+        } else if (parseInt(score) > competentLine) {
+            category = COMPETENT
+        } else if (parseInt(score) > developingLine) {
+            category = DEVELOPING
+        } else {
+            category = MARGINAL
+        }
+        return category
     }
 
     static getAllRankingData() {
