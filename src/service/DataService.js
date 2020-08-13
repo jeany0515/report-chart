@@ -190,9 +190,11 @@ class DataService {
     }
 
     static getHomeworkScoreData() {
-        return data.学习平台积分.map((trainee) => {
+        const scores = data.学习平台积分.map((trainee) => {
             return { name: trainee.名字, score: trainee.平台积分 }
         })
+        scores.sort(function (a, b) { return a.score - b.score })
+        return scores
     }
 
     static getTraineeAbiltiyRadarData(name) {
