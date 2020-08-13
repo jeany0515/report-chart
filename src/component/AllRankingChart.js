@@ -11,12 +11,13 @@ export default class AllRankingChart extends Component {
     }
 
     componentDidMount() {
+
         const data = DataService.getAllRankingData()
         const chart = new Chart({
             container: 'allRanking',
             autoFit: true,
             height: 800,
-            padding: [20, 0, 50, 100],
+            padding: [20, 0, 50, 200],
         });
         chart.data(data);
         chart.scale({
