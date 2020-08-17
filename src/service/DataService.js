@@ -147,13 +147,13 @@ class DataService {
 
     static getLevelName(score, outstandingLine, goodLine, competentLine, developingLine) {
         let category = OUTSTANDING
-        if (parseInt(score) > outstandingLine) {
+        if (parseInt(score) >= outstandingLine) {
             category = OUTSTANDING
-        } else if (parseInt(score) > goodLine) {
+        } else if (parseInt(score) >= goodLine) {
             category = GOOD
-        } else if (parseInt(score) > competentLine) {
+        } else if (parseInt(score) >= competentLine) {
             category = COMPETENT
-        } else if (parseInt(score) > developingLine) {
+        } else if (parseInt(score) >= developingLine) {
             category = DEVELOPING
         } else {
             category = MARGINAL
@@ -164,13 +164,13 @@ class DataService {
     static getAllRankingData() {
         const totalScores = data.总分.map(trainee => {
             let category = OUTSTANDING
-            if (parseInt(trainee.总分) > DEFAULT_OUTSTANDING_LINE) {
+            if (parseInt(trainee.总分) >= DEFAULT_OUTSTANDING_LINE) {
                 category = OUTSTANDING
-            } else if (parseInt(trainee.总分) > DEFAULT_GOOD_LINE) {
+            } else if (parseInt(trainee.总分) >= DEFAULT_GOOD_LINE) {
                 category = GOOD
-            } else if (parseInt(trainee.总分) > DEFAULT_COMPETENT_LINE) {
+            } else if (parseInt(trainee.总分) >= DEFAULT_COMPETENT_LINE) {
                 category = COMPETENT
-            } else if (parseInt(trainee.总分) > DEFAULT_DEVELOPING_LINE) {
+            } else if (parseInt(trainee.总分) >= DEFAULT_DEVELOPING_LINE) {
                 category = DEVELOPING
             } else {
                 category = MARGINAL
