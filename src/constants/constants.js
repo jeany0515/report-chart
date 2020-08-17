@@ -40,7 +40,7 @@ export const TECH_BEHAVIORS = [
     '每次练习都能做到职责单一',
     '有较快的编码速度完成练习',
     '能通过搜集信息快速定位问题',
-    '能独立使用新框架(Spring/React等)完成练习',
+    '能独立使用新框架完成练习',
     '能快速定位解决bug或问题',
     '代码编写满足clean code'
 ]
@@ -56,7 +56,7 @@ export const LEARN_BEHAVIORS = [
 ]
 export const COMPREHENSION_BEHAVIORS = [
     '每次练习之前都做Tasking',
-    '能接受别人的反馈并改进',
+    '能接受团队/老师的反馈并改进',
     '每次练习都做到需求澄清',
     '能理解每次练习的需求',
     '能发现他人代码中的问题',
