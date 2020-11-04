@@ -27,4 +27,5 @@ export default {
     ability_chart: '的能力图',
     homework_chart: '的作业质量总览',
     quality_chart: '的每次作业质量走势图',
+    detail_dimension_score: '各维度能力详细得分'
 }

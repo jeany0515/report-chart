@@ -27,4 +27,5 @@ export default {
     ability_chart: '\'s ability chart',
     homework_chart: '\'s homework quality overview',
     quality_chart: '\'s quality chart of each assignment',
+    detail_dimension_score: '\'s detailed scores for each dimension ability',
 }
