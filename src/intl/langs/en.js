@@ -15,4 +15,10 @@ export default {
     all_homework_ranking: 'Homework quality ranking of all students',
     platform_score_ranking: 'Learning platform scores ranking',
     platform_score_ranking_des: 'This result only counts homework completion scores and acceptance questions scores.',
+    ability_overview: 'Overview of students\' abilities',
+    dimension_results: 'Statistical results of all students in different dimensions',
+    technical_skills: 'Technical skills',
+    learning_ability: 'Learning ability',
+    comprehension: 'Comprehension',
+    communication: 'Communication skills',
 }

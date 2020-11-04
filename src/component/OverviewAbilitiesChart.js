@@ -10,11 +10,9 @@ import {
     COMPREHENSION,
     COMMUNICATION
 } from "../constants/constants";
+import {FormattedMessage} from "react-intl";
 
-export default class OverviewAbilitiesChart extends Component {
-    static propTypes = {
-        prop: PropTypes
-    }
+class OverviewAbilitiesChart extends Component {
 
     renderChart(containerId, data, title) {
         const chart = new Chart({
@@ -75,18 +73,18 @@ export default class OverviewAbilitiesChart extends Component {
     }
 
     componentDidMount() {
-        
-        this.renderChart('tech', DataService.getOverviewAbilitiesData(TECHNOLOGY), '技术能力')
-        this.renderChart('learn', DataService.getOverviewAbilitiesData(LEARNING), '学习能力')
-        this.renderChart('comprehension', DataService.getOverviewAbilitiesData(COMPREHENSION), '理解能力')
-        this.renderChart('communication', DataService.getOverviewAbilitiesData(COMMUNICATION), '沟通能力')
+
+        this.renderChart('tech', DataService.getOverviewAbilitiesData(TECHNOLOGY), this.context.messages.technical_skills)
+        this.renderChart('learn', DataService.getOverviewAbilitiesData(LEARNING), this.context.messages.learning_ability)
+        this.renderChart('comprehension', DataService.getOverviewAbilitiesData(COMPREHENSION), this.context.messages.comprehension)
+        this.renderChart('communication', DataService.getOverviewAbilitiesData(COMMUNICATION), this.context.messages.communication)
     }
 
     render() {
         return (
             <div>
-                <h1>学员能力总览</h1>
-                <p>所有学员分不同维度的统计结果</p>
+                <h1><FormattedMessage id='ability_overview'/></h1>
+                <p><FormattedMessage id='dimension_results'/></p>
                 <Row >
                     <Col flex="820px">
                         <div id="tech"></div>
@@ -107,3 +105,9 @@ export default class OverviewAbilitiesChart extends Component {
         )
     }
 }
+
+OverviewAbilitiesChart.contextTypes = {
+    messages: PropTypes.object.isRequired
+};
+
+export default OverviewAbilitiesChart;

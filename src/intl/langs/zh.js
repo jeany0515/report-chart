@@ -15,4 +15,10 @@ export default {
     all_homework_ranking: '所有学员的作业质量得分排名结果',
     platform_score_ranking: '学习平台积分排名',
     platform_score_ranking_des: '此结果仅统计作业完成度得分和验收题得分。',
+    ability_overview: '学员能力总览',
+    dimension_results: '所有学员分不同维度的统计结果',
+    technical_skills: '技术能力',
+    learning_ability: '学习能力',
+    comprehension: '理解能力',
+    communication: '沟通能力',
 }
