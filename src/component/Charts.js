@@ -11,10 +11,7 @@ import { Divider, Card, Row, Col } from 'antd';
 import PersonalGroupChart from './PersonalGroupChart';
 import DataService from '../service/DataService';
 
-export default class Charts extends Component {
-    static propTypes = {
-        prop: PropTypes
-    }
+class Charts extends Component {
 
     render() {
         let trainees = DataService.getTraineesData()
@@ -42,7 +39,7 @@ export default class Charts extends Component {
                         trainees.map((trainee) => (
                             <Row style={{ margin: "25px" }}>
                                 <Col span={24}>
-                                    <Card title={trainee.name + "的详细报告"} description="This is the description" bordered={true}>
+                                    <Card title={trainee.name + this.context.messages.detail_report} description="This is the description" bordered={true}>
                                         <PersonalGroupChart key={trainee.name} name={trainee.name} />
                                     </Card>
                                 </Col>
@@ -54,3 +51,9 @@ export default class Charts extends Component {
         )
     }
 }
+
+Charts.contextTypes = {
+    messages: PropTypes.object.isRequired
+};
+
+export default Charts;

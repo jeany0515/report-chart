@@ -10,4 +10,5 @@ export default {
     learning_ranking: '学习能力排名',
     comprehension_ranking: '理解能力排名',
     communication_ranking: '沟通能力排名',
+    detail_report: '的详细报告',
 }
