@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Chart } from '@antv/g2';
 import DataService from '../service/DataService';
+import {FormattedMessage} from "react-intl";
 
-export default class TraineeHomeworkQualityChart extends Component {
+class TraineeHomeworkQualityChart extends Component {
     static propTypes = {
         prop: PropTypes
     }
@@ -35,7 +36,7 @@ export default class TraineeHomeworkQualityChart extends Component {
             .annotation()
             .text({
                 position: ['50%', '50%'],
-                content: this.props.name + '的作业质量概览',
+                content: this.props.name + this.context.messages.homework_chart,
                 style: {
                     fontSize: 14,
                     fill: '#8c8c8c',
@@ -70,9 +71,15 @@ export default class TraineeHomeworkQualityChart extends Component {
     render() {
         return (
             <div>
-                <h1>{this.props.name}的作业质量总览</h1>
+                <h1>{this.props.name}<FormattedMessage id='homework_chart'/></h1>
                 <div id={this.props.name + "quality"}></div>
             </div>
         )
     }
 }
+
+TraineeHomeworkQualityChart.contextTypes = {
+    messages: PropTypes.object.isRequired
+};
+
+export default TraineeHomeworkQualityChart;

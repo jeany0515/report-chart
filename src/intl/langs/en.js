@@ -25,4 +25,5 @@ export default {
     level_overview: 'Overview of students ranking',
     level_overview_des: 'Statistics based on the overall performance of the students',
     ability_chart: '\'s ability chart',
+    homework_chart: '\'s homework quality overview',
 }
