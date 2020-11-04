@@ -26,4 +26,5 @@ export default {
     level_overview_des: '根据学员整体表现情况统计的结果',
     ability_chart: '的能力图',
     homework_chart: '的作业质量总览',
+    quality_chart: '的每次作业质量走势图',
 }
