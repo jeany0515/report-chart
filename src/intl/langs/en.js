@@ -21,4 +21,6 @@ export default {
     learning_ability: 'Learning ability',
     comprehension: 'Comprehension',
     communication: 'Communication skills',
+    level_overview: 'Overview of students ranking',
+    level_overview_des: 'Statistics based on the overall performance of the students',
 }

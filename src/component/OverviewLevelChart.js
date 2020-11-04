@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Chart } from '@antv/g2';
 import DataService from '../service/DataService';
+import {FormattedMessage} from "react-intl";
 
 export default class OverviewLevelChart extends Component {
     static propTypes = {
@@ -51,8 +52,8 @@ export default class OverviewLevelChart extends Component {
     render() {
         return (
             <div>
-                <h1>学员等级总览</h1>
-                <p>根据学员整体表现情况统计的结果</p>
+                <h1><FormattedMessage id='level_overview'/></h1>
+                <p><FormattedMessage id='level_overview_des'/></p>
                 <div id="c1"></div>
             </div>
         )

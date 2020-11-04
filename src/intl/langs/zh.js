@@ -21,4 +21,6 @@ export default {
     learning_ability: '学习能力',
     comprehension: '理解能力',
     communication: '沟通能力',
+    level_overview: '学员等级总览',
+    level_overview_des: '根据学员整体表现情况统计的结果',
 }
