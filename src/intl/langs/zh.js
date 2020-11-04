@@ -11,4 +11,6 @@ export default {
     comprehension_ranking: '理解能力排名',
     communication_ranking: '沟通能力排名',
     detail_report: '的详细报告',
+    homework_ranking: '作业质量排名',
+    all_homework_ranking: '所有学员的作业质量得分排名结果',
 }

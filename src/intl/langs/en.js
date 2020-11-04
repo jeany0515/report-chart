@@ -10,5 +10,7 @@ export default {
     learning_ranking: 'Learning ability ranking',
     comprehension_ranking: 'Comprehension ranking',
     communication_ranking: 'Communication ability ranking',
-    detail_report: '\'s detail report'
+    detail_report: '\'s detail report',
+    homework_ranking: 'Homework quality ranking',
+    all_homework_ranking: 'Homework quality ranking of all students',
 }

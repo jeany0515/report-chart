@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Chart } from '@antv/g2';
 import DataService from '../service/DataService';
+import {FormattedMessage} from "react-intl";
 
 export default class HomeworkQualityRankingChart extends Component {
     static propTypes = {
@@ -37,8 +38,8 @@ export default class HomeworkQualityRankingChart extends Component {
     render() {
         return (
             <div style={{margin: "50px"}}>
-                <h1>作业质量排名</h1>
-                <p>所有学员的作业质量得分排名结果</p>
+                <h1><FormattedMessage id='homework_ranking'/></h1>
+                <p><FormattedMessage id='all_homework_ranking'/></p>
                 <div id='qualityRanking'>
                 </div>
             </div>
