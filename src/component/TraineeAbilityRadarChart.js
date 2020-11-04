@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Chart } from '@antv/g2';
 import DataSet from '@antv/data-set';
 import DataService from '../service/DataService';
+import {FormattedMessage} from "react-intl";
 
 export default class TraineeAbilityRadarChart extends Component {
     static propTypes = {
@@ -98,7 +99,7 @@ export default class TraineeAbilityRadarChart extends Component {
     render() {
         return (
             <div>
-                <h1>{this.props.name}的能力图</h1>
+                <h1>{this.props.name}<FormattedMessage id='ability_chart'/></h1>
                 <div id={this.props.name + "ability"}>
                 </div>
             </div>

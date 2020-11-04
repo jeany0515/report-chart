@@ -24,4 +24,5 @@ export default {
     communication: '沟通能力',
     level_overview: '学员等级总览',
     level_overview_des: '根据学员整体表现情况统计的结果',
+    ability_chart: '的能力图',
 }
