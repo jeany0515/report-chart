@@ -11,6 +11,7 @@ export default {
     comprehension_ranking: '理解能力排名',
     communication_ranking: '沟通能力排名',
     detail_report: '的详细报告',
+    detail_report_des: '包括该学员各维度总体能力的能力图统计，每次作业质量按时间顺序的走势图，学员所有作业质量得分的分布，以及各维度的每一项的详细得分。',
     homework_ranking: '作业质量排名',
     all_homework_ranking: '所有学员的作业质量得分排名结果',
     platform_score_ranking: '学习平台积分排名',

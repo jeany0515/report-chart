@@ -11,6 +11,7 @@ export default {
     comprehension_ranking: 'Comprehension ranking',
     communication_ranking: 'Communication ability ranking',
     detail_report: '\'s detail report',
+    detail_report_des: 'Including the ability statistics graph of the student\'s overall ability in each dimension, the chronological trend chart of the quality of each assignment, the distribution of the student\'s all assignment quality scores, and the detailed score of each item in each dimension.',
     homework_ranking: 'Homework quality ranking',
     all_homework_ranking: 'Homework quality ranking of all students',
     platform_score_ranking: 'Learning platform scores ranking',
