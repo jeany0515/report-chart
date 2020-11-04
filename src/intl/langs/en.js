@@ -13,4 +13,6 @@ export default {
     detail_report: '\'s detail report',
     homework_ranking: 'Homework quality ranking',
     all_homework_ranking: 'Homework quality ranking of all students',
+    platform_score_ranking: 'Learning platform scores ranking',
+    platform_score_ranking_des: 'This result only counts homework completion scores and acceptance questions scores.',
 }

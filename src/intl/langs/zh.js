@@ -13,4 +13,6 @@ export default {
     detail_report: '的详细报告',
     homework_ranking: '作业质量排名',
     all_homework_ranking: '所有学员的作业质量得分排名结果',
+    platform_score_ranking: '学习平台积分排名',
+    platform_score_ranking_des: '此结果仅统计作业完成度得分和验收题得分。',
 }
