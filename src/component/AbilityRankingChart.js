@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import { Chart } from '@antv/g2';
 import { Row, Col } from 'antd';
 import { maxBy, uniq } from 'lodash';
@@ -11,12 +10,9 @@ import {
     COMMUNICATION,
     COLOR_MAP
 } from "../constants/constants";
+import {FormattedMessage} from "react-intl";
 
 export default class AbilityRankingChart extends Component {
-    static propTypes = {
-        prop: PropTypes
-    }
-
     renderAbilityRankingChart(containerId, data, levelName) {
         const chart = new Chart({
             container: containerId,
@@ -82,18 +78,18 @@ export default class AbilityRankingChart extends Component {
     render() {
         return (
             <div>
-                <h1>学员能力排名</h1>
-                <p>所有学员不同维度能力的排名结果</p>
+                <h1><FormattedMessage id="ability_ranking"/></h1>
+                <p><FormattedMessage id="dimensional_ranking"/></p>
                 <Row >
                     <Col flex="820px">
                         <div>
-                            <h2>技术能力排名</h2>
+                            <h2><FormattedMessage id="technical_ranking"/></h2>
                             <div id="techRanking"></div>
                         </div>
                     </Col>
                     <Col flex="820px">
                         <div>
-                            <h2>学习能力排名</h2>
+                            <h2><FormattedMessage id='learning_ranking'/></h2>
                             <div id="learnRanking"></div>
                         </div>
                     </Col>
@@ -101,13 +97,13 @@ export default class AbilityRankingChart extends Component {
                 <Row>
                     <Col flex="820px">
                         <div>
-                            <h2>理解能力排名</h2>
+                            <h2><FormattedMessage id='comprehension_ranking'/></h2>
                             <div id="comprehensionRanking"></div>
                         </div>
                     </Col>
                     <Col flex="820px">
                         <div>
-                            <h2>沟通能力排名</h2>
+                            <h2><FormattedMessage id='communication_ranking'/></h2>
                             <div id="communicationRanking"></div>
                         </div>
                     </Col>
