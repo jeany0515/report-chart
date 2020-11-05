@@ -39,6 +39,7 @@ class AllRankingChart extends Component {
         });
         chart.legend(false);
         chart.coordinate('rect').transpose();
+        chart.tooltip(false)
 
         const colors = uniq(data.map(item => item.cat)).map(cat => COLOR_MAP[cat])
 
@@ -56,8 +57,6 @@ class AllRankingChart extends Component {
                     return (originData.score);
                 },
             });
-
-        chart.interaction('element-active');
 
         chart.render();
     }

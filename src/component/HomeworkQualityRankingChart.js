@@ -19,10 +19,7 @@ export default class HomeworkQualityRankingChart extends Component {
         chart.data(DataService.getHomeworkQualityRankingData());
         chart.scale('score', { nice: true });
         chart.coordinate().transpose();
-        chart.tooltip({
-            showMarkers: false
-        });
-        chart.interaction('active-region');
+        chart.tooltip(false);
         chart.interval()
         .position('name*score')
         .label('score', {

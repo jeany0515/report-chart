@@ -183,7 +183,7 @@ class DataService {
 
     static getHomeworkQualityRankingData() {
         const qualities = data.作业质量.map(quality => {
-            return { name: quality.名字, score: parseInt(quality.总分) }
+            return { name: quality.Name, score: parseInt(quality.Total) }
         })
         qualities.sort(function (a, b) { return a.score - b.score })
         return qualities
