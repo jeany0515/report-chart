@@ -18,7 +18,7 @@ export default class AbilityRankingChart extends Component {
             container: containerId,
             autoFit: true,
             height: 800,
-            padding: [20, 0, 50, 100],
+            // padding: [20, 0, 50, 100],
         });
         chart.data(data);
         const max = maxBy(data, d => d.score).score
@@ -80,13 +80,13 @@ export default class AbilityRankingChart extends Component {
                 <h1><FormattedMessage id="ability_ranking"/></h1>
                 <p><FormattedMessage id="dimensional_ranking"/></p>
                 <Row >
-                    <Col flex="820px">
+                    <Col flex="820px" style={{ padding: "10px" }}>
                         <div>
                             <h2><FormattedMessage id="technical_ranking"/></h2>
                             <div id="techRanking"></div>
                         </div>
                     </Col>
-                    <Col flex="820px">
+                    <Col flex="820px" style={{ padding: "10px" }}>
                         <div>
                             <h2><FormattedMessage id='learning_ranking'/></h2>
                             <div id="learnRanking"></div>
