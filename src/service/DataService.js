@@ -220,14 +220,14 @@ class DataService {
     static getTraineeHomeworkQualityData(name) {
         const trainee = data.作业质量.filter(trainee => trainee.Name === name)[0]
         const homeworkNames = Object.keys(trainee)
-        homeworkNames.splice(homeworkNames.indexOf('名字'), 1)
-        homeworkNames.splice(homeworkNames.indexOf('总分'), 1)
+        homeworkNames.splice(homeworkNames.indexOf('Name'), 1)
+        homeworkNames.splice(homeworkNames.indexOf('Total'), 1)
         const allScores = homeworkNames.map(name => parseInt(trainee[name]))
-        const outstanding = allScores.filter(score => score === 5).length
-        const good = allScores.filter(score => score === 4).length
-        const competent = allScores.filter(score => score === 3).length
-        const developing = allScores.filter(score => score === 2).length
-        const marginal = allScores.filter(score => score === 1).length
+        const outstanding = allScores.filter(score => score === 10 || score === 9).length
+        const good = allScores.filter(score => score === 8 || score === 7).length
+        const competent = allScores.filter(score => score === 6 || score === 5).length
+        const developing = allScores.filter(score => score === 4 || score === 3).length
+        const marginal = allScores.filter(score => score === 2 || score === 1).length
         return [
             { item: OUTSTANDING, percent: outstanding / allScores.length },
             { item: GOOD, percent: good / allScores.length },
