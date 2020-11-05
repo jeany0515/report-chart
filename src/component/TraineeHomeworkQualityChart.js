@@ -32,7 +32,7 @@ class TraineeHomeworkQualityChart extends Component {
             .annotation()
             .text({
                 position: ['50%', '50%'],
-                content: this.props.name + this.context.messages.homework_chart,
+                content: this.props.name,
                 style: {
                     fontSize: 14,
                     fill: '#8c8c8c',
