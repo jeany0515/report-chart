@@ -39,7 +39,7 @@ import {FormattedMessage} from "react-intl";
         });
         chart.data(dv.rows);
         chart.scale('score', {
-            min: 20,
+            min: 10,
             max: 40,
         });
         chart.coordinate('polar', {
