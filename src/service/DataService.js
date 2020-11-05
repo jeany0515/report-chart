@@ -210,8 +210,8 @@ class DataService {
     static getTraineeHomeworkQualityTrendData(name) {
         const trainee = data.作业质量.filter(trainee => trainee.Name === name)[0]
         const homeworkNames = Object.keys(trainee)
-        homeworkNames.splice(homeworkNames.indexOf('名字'), 1)
-        homeworkNames.splice(homeworkNames.indexOf('总分'), 1)
+        homeworkNames.splice(homeworkNames.indexOf('Name'), 1)
+        homeworkNames.splice(homeworkNames.indexOf('Total'), 1)
         return homeworkNames.map(name => {
             return { item: name, value: parseInt(trainee[name]) }
         })

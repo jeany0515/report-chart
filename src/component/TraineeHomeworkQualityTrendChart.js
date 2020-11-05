@@ -27,10 +27,7 @@ export default class TraineeHomeworkQualityTrendChart extends Component {
             },
         });
 
-        chart.tooltip({
-            showCrosshairs: true, // 展示 Tooltip 辅助线
-            shared: true,
-        });
+        chart.tooltip(false);
 
         chart.line().position('item*value').label('value');
         chart.point().position('item*value');
