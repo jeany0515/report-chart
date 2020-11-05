@@ -228,13 +228,23 @@ class DataService {
         const competent = allScores.filter(score => score === 6 || score === 5).length
         const developing = allScores.filter(score => score === 4 || score === 3).length
         const marginal = allScores.filter(score => score === 2 || score === 1).length
-        return [
-            { item: OUTSTANDING, percent: outstanding / allScores.length },
-            { item: GOOD, percent: good / allScores.length },
-            { item: COMPETENT, percent: competent / allScores.length },
-            { item: DEVELOPING, percent: developing / allScores.length },
-            { item: MARGINAL, percent: marginal / allScores.length },
-        ];
+        const result = []
+        if (outstanding !== 0) {
+            result.push({ item: OUTSTANDING, percent: outstanding / allScores.length })
+        }
+        if (good !== 0) {
+            result.push({ item: GOOD, percent: good / allScores.length })
+        }
+        if (competent !== 0) {
+            result.push({ item: COMPETENT, percent: competent / allScores.length })
+        }
+        if (developing !== 0) {
+            result.push({ item: DEVELOPING, percent: developing / allScores.length })
+        }
+        if (marginal !== 0) {
+            result.push({ item: MARGINAL, percent: marginal / allScores.length })
+        }
+        return result
     }
 
     static getTraineeDetailData(name, category) {

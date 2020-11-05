@@ -26,11 +26,7 @@ class TraineeHomeworkQualityChart extends Component {
             radius: 0.75,
             innerRadius: 0.6,
         });
-        chart.tooltip({
-            showTitle: false,
-            showMarkers: false,
-            itemTpl: '<li class="g2-tooltip-list-item"><span style="background-color:{color};" class="g2-tooltip-marker"></span>{name}: {value}</li>',
-        });
+        chart.tooltip(false);
         // 辅助文本
         chart
             .annotation()
@@ -55,15 +51,6 @@ class TraineeHomeworkQualityChart extends Component {
                     },
                 };
             })
-            .tooltip('item*percent', (item, percent) => {
-                percent = parseInt(percent * 100) + '%';
-                return {
-                    name: item,
-                    value: percent,
-                };
-            });
-
-        chart.interaction('element-active');
 
         chart.render();
     }
