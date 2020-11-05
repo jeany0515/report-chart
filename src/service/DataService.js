@@ -62,13 +62,23 @@ class DataService {
         const competent = scores.filter(score => score >= competentLine && score < goodLine).length
         const developing = scores.filter(score => score >= developingLine && score < competentLine).length
         const marginal = scores.filter(score => score < developingLine).length
-        return [
-            { item: OUTSTANDING, percent: outstanding / scores.length },
-            { item: GOOD, percent: good / scores.length },
-            { item: COMPETENT, percent: competent / scores.length },
-            { item: DEVELOPING, percent: developing / scores.length },
-            { item: MARGINAL, percent: marginal / scores.length },
-        ];
+        const percentLevels = []
+        if (outstanding !== 0) {
+            percentLevels.push({ item: OUTSTANDING, percent: outstanding / scores.length })
+        }
+        if (good !== 0) {
+            percentLevels.push({ item: GOOD, percent: good / scores.length })
+        }
+        if (competent !== 0) {
+            percentLevels.push({ item: COMPETENT, percent: competent / scores.length })
+        }
+        if (developing !== 0) {
+            percentLevels.push({ item: DEVELOPING, percent: developing / scores.length })
+        }
+        if (marginal !== 0) {
+            percentLevels.push({ item: MARGINAL, percent: marginal / scores.length })
+        }
+        return percentLevels
     }
 
     static getOverviewAbilitiesData(category) {
