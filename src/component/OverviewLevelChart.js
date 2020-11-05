@@ -28,10 +28,7 @@ export default class OverviewLevelChart extends Component {
             },
         });
 
-        chart.tooltip({
-            showTitle: false,
-            showMarkers: false,
-        });
+        chart.tooltip(false);
 
         chart
             .interval()
@@ -43,8 +40,6 @@ export default class OverviewLevelChart extends Component {
                 },
             })
             .adjust('stack');
-
-        chart.interaction('element-active');
 
         chart.render();
     }
