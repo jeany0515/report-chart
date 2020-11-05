@@ -19,10 +19,7 @@ export default class HomeworkScoreChart extends Component {
         chart.data(DataService.getHomeworkScoreData());
         chart.scale('score', { nice: true });
         chart.coordinate().transpose();
-        chart.tooltip({
-            showMarkers: false
-        });
-        chart.interaction('active-region');
+        chart.tooltip(false);
         chart.interval()
         .position('name*score')
         .label('score', {

@@ -33,18 +33,7 @@ export default class TraineeAbilityRadarChart extends Component {
         chart.coordinate('polar', {
             radius: 0.8,
         });
-        chart.tooltip({
-            shared: true,
-            showCrosshairs: true,
-            crosshairs: {
-                line: {
-                    style: {
-                        lineDash: [4, 4],
-                        stroke: '#333'
-                    }
-                }
-            }
-        });
+        chart.tooltip(false);
         chart.axis('item', {
             line: null,
             tickLine: null,
