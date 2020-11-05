@@ -9,11 +9,15 @@ import {
     TECHNOLOGY,
     LEARNING,
     COMPREHENSION,
-    COMMUNICATION
+    COMMUNICATION,
+    TECH_BEHAVIORS,
+    LEARN_BEHAVIORS,
+    COMMUNICATION_BEHAVIORS,
+    COMPREHENSION_BEHAVIORS
 } from "../constants/constants";
 import {FormattedMessage} from "react-intl";
 
-export default class TraineePersonDetailRadarChart extends Component {
+ class TraineePersonDetailRadarChart extends Component {
     static propTypes = {
         prop: PropTypes
     }
@@ -89,11 +93,17 @@ export default class TraineePersonDetailRadarChart extends Component {
         chart.render();
     }
 
+    translateBehaviors(behaviors, LanguageMap) {
+        return behaviors.map(item => {
+            return { item: this.context.messages[LanguageMap[item.item]], score: item.score }
+        })
+    }
+
     componentDidMount() {
-        this.renderRadarChart(this.props.name + "techDetail", DataService.getTraineeDetailData(this.props.name, TECHNOLOGY))
-        this.renderRadarChart(this.props.name + "learnDetail", DataService.getTraineeDetailData(this.props.name, LEARNING))
-        this.renderRadarChart(this.props.name + "comprehensionDetail", DataService.getTraineeDetailData(this.props.name, COMPREHENSION))
-        this.renderRadarChart(this.props.name + "communicationDetail", DataService.getTraineeDetailData(this.props.name, COMMUNICATION))
+        this.renderRadarChart(this.props.name + "techDetail", this.translateBehaviors(DataService.getTraineeDetailData(this.props.name, TECHNOLOGY), TECH_BEHAVIORS))
+        this.renderRadarChart(this.props.name + "learnDetail", this.translateBehaviors(DataService.getTraineeDetailData(this.props.name, LEARNING), LEARN_BEHAVIORS))
+        this.renderRadarChart(this.props.name + "comprehensionDetail", this.translateBehaviors(DataService.getTraineeDetailData(this.props.name, COMPREHENSION), COMPREHENSION_BEHAVIORS))
+        this.renderRadarChart(this.props.name + "communicationDetail", this.translateBehaviors(DataService.getTraineeDetailData(this.props.name, COMMUNICATION), COMMUNICATION_BEHAVIORS))
     }
 
     render() {
@@ -125,3 +135,9 @@ export default class TraineePersonDetailRadarChart extends Component {
         )
     }
 }
+
+TraineePersonDetailRadarChart.contextTypes = {
+    messages: PropTypes.object.isRequired
+};
+
+export default TraineePersonDetailRadarChart;

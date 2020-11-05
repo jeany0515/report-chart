@@ -34,46 +34,46 @@ export const COMPETENT = 'Competent'
 export const DEVELOPING = 'Developing'
 export const MARGINAL = 'Marginal'
 
-export const TECH_BEHAVIORS = [
-    '每次任务都有验收思想',
-    '有代码设计',
-    '每次练习都能做到职责单一',
-    '代码编写满足clean code',
-    '能较快的完成各类练习',
-    '能通过搜集信息快速定位问题',
-    '能利用资源完成任务',
-    '能解决问题'
-]
-export const LEARN_BEHAVIORS = [
-    '有小步迭代思想',
-    '遵循最佳实践',
-    '能从他人身上学习',
-    '坚持每日写总结',
-    '有很好的执行力',
-    '能分清优先级',
-    '有良好的工作习惯',
-    '每天都有持续改进'
-]
-export const COMPREHENSION_BEHAVIORS = [
-    '能做任务分解',
-    '能接受他人的反馈并改进',
-    '拿到任务能做到需求澄清',
-    '能理解练习的需求',
-    '能发现他人代码中的问题',
-    '能理解新知识',
-    '能使用有业务意义的git commit',
-    '能使用有业务意义的代码命名'
-]
-export const COMMUNICATION_BEHAVIORS = [
-    '能积极提供支持或帮助',
-    '能积极参与小组内讨论',
-    '有良好的团队协作能力',
-    '能产生有效对话',
-    '能积极回答问题',
-    '能积极寻求帮助',
-    '能积极给出反馈',
-    '能积极分享观点或技能'
-]
+export const TECH_BEHAVIORS = {
+    '每次任务都有验收思想': 'tech_behavior_1',
+    '有代码设计': 'tech_behavior_2',
+    '每次练习都能做到职责单一': 'tech_behavior_3',
+    '代码编写满足clean code': 'tech_behavior_4',
+    '能较快的完成各类练习': 'tech_behavior_5',
+    '能通过搜集信息快速定位问题': 'tech_behavior_6',
+    '能利用资源完成任务': 'tech_behavior_7',
+    '能解决问题': 'tech_behavior_8',
+}
+export const LEARN_BEHAVIORS = {
+    '有小步迭代思想': 'learn_behavior_1',
+    '遵循最佳实践': 'learn_behavior_2',
+    '能从他人身上学习': 'learn_behavior_3',
+    '坚持每日写总结': 'learn_behavior_4',
+    '有很好的执行力': 'learn_behavior_5',
+    '能分清优先级': 'learn_behavior_6',
+    '有良好的工作习惯': 'learn_behavior_7',
+    '每天都有持续改进': 'learn_behavior_8'
+}
+export const COMPREHENSION_BEHAVIORS = {
+    '能做任务分解': 'comprehension_behavior_1',
+    '能接受他人的反馈并改进': 'comprehension_behavior_2',
+    '拿到任务能做到需求澄清': 'comprehension_behavior_3',
+    '能理解练习的需求': 'comprehension_behavior_4',
+    '能发现他人代码中的问题': 'comprehension_behavior_5',
+    '能理解新知识': 'comprehension_behavior_6',
+    '能使用有业务意义的git commit': 'comprehension_behavior_7',
+    '能使用有业务意义的代码命名': 'comprehension_behavior_8'
+}
+export const COMMUNICATION_BEHAVIORS = {
+    '能积极提供支持或帮助': 'communication_behavior_1',
+    '能积极参与小组内讨论': 'communication_behavior_2',
+    '有良好的团队协作能力': 'communication_behavior_3',
+    '能产生有效对话': 'communication_behavior_4',
+    '能积极回答问题': 'communication_behavior_5',
+    '能积极寻求帮助': 'communication_behavior_6',
+    '能积极给出反馈': 'communication_behavior_7',
+    '能积极分享观点或技能': 'communication_behavior_8'
+}
 
 export const COLOR_MAP = {
     Outstanding: '#2194ff',

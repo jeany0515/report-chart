@@ -262,13 +262,13 @@ class DataService {
             return { item: item.行为, score: parseInt(item.各项总分) }
         })
         if (category === TECHNOLOGY) {
-            return allScores.filter(score => TECH_BEHAVIORS.includes(score.item))
+            return allScores.filter(score => Object.keys(TECH_BEHAVIORS).includes(score.item))
         } else if (category === LEARNING) {
-            return allScores.filter(score => LEARN_BEHAVIORS.includes(score.item))
+            return allScores.filter(score => Object.keys(LEARN_BEHAVIORS).includes(score.item))
         } else if (category === COMPREHENSION) {
-            return allScores.filter(score => COMPREHENSION_BEHAVIORS.includes(score.item))
+            return allScores.filter(score => Object.keys(COMPREHENSION_BEHAVIORS).includes(score.item))
         }
-        return allScores.filter(score => COMMUNICATION_BEHAVIORS.includes(score.item))
+        return allScores.filter(score => Object.keys(COMMUNICATION_BEHAVIORS).includes(score.item))
     }
 }
 
