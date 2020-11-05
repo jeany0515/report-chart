@@ -3,14 +3,16 @@ import { Col, Row } from 'antd';
 import 'antd/dist/antd.css';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { uniq } from 'lodash';
 import DataService from '../service/DataService';
 import {
     TECHNOLOGY,
     LEARNING,
     COMPREHENSION,
-    COMMUNICATION
+    COMMUNICATION,
+    COLOR_MAP
 } from "../constants/constants";
-import {FormattedMessage} from "react-intl";
+import { FormattedMessage } from "react-intl";
 
 class OverviewAbilitiesChart extends Component {
 
@@ -31,11 +33,6 @@ class OverviewAbilitiesChart extends Component {
             radius: 0.75,
             innerRadius: 0.6,
         });
-        chart.tooltip({
-            showTitle: false,
-            showMarkers: false,
-            itemTpl: '<li class="g2-tooltip-list-item"><span style="background-color:{color};" class="g2-tooltip-marker"></span>{name}: {value}</li>',
-        });
         chart
             .annotation()
             .text({
@@ -47,11 +44,13 @@ class OverviewAbilitiesChart extends Component {
                     textAlign: 'center',
                 }
             });
+
+        const colors = uniq(data.map(item => item.item)).map(cat => COLOR_MAP[cat])
         chart
             .interval()
             .adjust('stack')
             .position('percent')
-            .color('item')
+            .color('item', colors)
             .label('percent', (percent) => {
                 return {
                     content: (data) => {
@@ -75,8 +74,8 @@ class OverviewAbilitiesChart extends Component {
     render() {
         return (
             <div>
-                <h1><FormattedMessage id='ability_overview'/></h1>
-                <p><FormattedMessage id='dimension_results'/></p>
+                <h1><FormattedMessage id='ability_overview' /></h1>
+                <p><FormattedMessage id='dimension_results' /></p>
                 <Row >
                     <Col flex="820px">
                         <div id="tech"></div>
