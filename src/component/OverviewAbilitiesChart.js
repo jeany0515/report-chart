@@ -59,15 +59,7 @@ class OverviewAbilitiesChart extends Component {
                     },
                 };
             })
-            .tooltip('item*percent', (item, percent) => {
-                percent = parseInt(percent * 100) + '%';
-                return {
-                    name: item,
-                    value: percent,
-                };
-            });
-
-        chart.interaction('element-active');
+            .tooltip(false);
 
         chart.render();
     }
