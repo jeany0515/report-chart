@@ -13,12 +13,11 @@ class AllRankingChart extends Component {
             container: 'allRanking',
             autoFit: true,
             height: 800,
-            padding: [20, 0, 50, 200],
         });
         chart.data(data);
         chart.scale({
             score: {
-                max: 2000,
+                max: 1100,
                 min: 0,
                 alias: this.context.messages.overall_ranking,
             },
