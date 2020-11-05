@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 import {FormattedMessage} from 'react-intl';
 import { Chart } from '@antv/g2';
 import DataService from '../service/DataService';
-import { uniq } from 'lodash';
+import { uniq, maxBy } from 'lodash';
 import { COLOR_MAP } from "../constants/constants";
 
 class AllRankingChart extends Component {
     componentDidMount() {
         const data = DataService.getAllRankingData()
+        const max = maxBy(data, d => d.score).score
         const chart = new Chart({
             container: 'allRanking',
             autoFit: true,
@@ -17,7 +18,7 @@ class AllRankingChart extends Component {
         chart.data(data);
         chart.scale({
             score: {
-                max: 1100,
+                max: max + 100,
                 min: 0,
                 alias: this.context.messages.overall_ranking,
             },
