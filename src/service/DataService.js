@@ -208,7 +208,7 @@ class DataService {
     }
 
     static getTraineeHomeworkQualityTrendData(name) {
-        const trainee = data.作业质量.filter(trainee => trainee.名字 === name)[0]
+        const trainee = data.作业质量.filter(trainee => trainee.Name === name)[0]
         const homeworkNames = Object.keys(trainee)
         homeworkNames.splice(homeworkNames.indexOf('名字'), 1)
         homeworkNames.splice(homeworkNames.indexOf('总分'), 1)
@@ -218,7 +218,7 @@ class DataService {
     }
 
     static getTraineeHomeworkQualityData(name) {
-        const trainee = data.作业质量.filter(trainee => trainee.名字 === name)[0]
+        const trainee = data.作业质量.filter(trainee => trainee.Name === name)[0]
         const homeworkNames = Object.keys(trainee)
         homeworkNames.splice(homeworkNames.indexOf('名字'), 1)
         homeworkNames.splice(homeworkNames.indexOf('总分'), 1)
