@@ -28,6 +28,8 @@ export default {
     homework_chart: '\'s homework quality overview',
     quality_chart: '\'s quality chart of each assignment',
     detail_dimension_score: '\'s detailed scores for each dimension ability',
+    position_description: 'Current Score',
+    current_score: 'Current score',
     tech_behavior_1: 'Acceptance thought',
     tech_behavior_2: 'Code design',
     tech_behavior_3: 'Single responsibility',
