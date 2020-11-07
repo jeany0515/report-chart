@@ -142,7 +142,7 @@ class TraineePositionChart extends Component {
     }
 
     componentDidMount() {
-        const data = { title: 'Woody', subtitle: '', ranges: [1, 2, 3, 4, 5], actual: 0, target: 4.4 }
+        const data = DataService.getCurrentScore(this.props.name);
         this.renderPositionChart(data, this.props.name + "position")
     }
 

@@ -270,6 +270,15 @@ class DataService {
         }
         return allScores.filter(score => Object.keys(COMMUNICATION_BEHAVIORS).includes(score.item))
     }
+
+    static getCurrentScore(name) {
+        const trainee = data.总分.filter(item => item.名字 === name)[0]
+
+        // 由于图表是0-5的range，而我们的分数是1200-3200的range，所以在这里做了一个映射转换。因为图表用1200-3200的range显示会有问题。
+        const score = (parseInt(trainee.总分) - 1200) / 400 
+        
+        return { title: trainee.名字, subtitle: '', ranges: [1, 2, 3, 4, 5], actual: 0, target: score }
+    }
 }
 
 export default DataService
