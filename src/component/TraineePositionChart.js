@@ -29,7 +29,7 @@ class TraineePositionChart extends Component {
                     y: 1
                 }
             },
-            padding: [15, 120, 10]
+            padding: [15, 220, 10]
         });
         view.data([data]);
         view.scale({
