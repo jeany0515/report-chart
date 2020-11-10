@@ -15,8 +15,13 @@
 Excel to Json 在线工具
 <http://beautifytools.com/excel-to-json-converter.php>
 
-在线拼图：
-<https://www.toolnb.com/tools/tppj.html>
+### 生成报告步骤：
+1. 使用chrome插件截图报告
+2. 把图片按人截取成一张一张的图片
+3. 使用在线拼图把截断的图片拼好<https://www.toolnb.com/tools/tppj.html>
+4. 用Mac的Preview把所有图片转成PDF
+5. 使用在线工具合并所有PDF为一个PDF
+   <https://smallpdf.com/>
 
 ### 注意事项
 
