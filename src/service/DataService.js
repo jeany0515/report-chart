@@ -210,10 +210,10 @@ class DataService {
     static getTraineeAbiltiyRadarData(name) {
         const trainee = data.总分.filter(trainee => trainee.名字 === name)[0]
         return [
-            { item: '技术能力', score: parseInt(trainee.技术能力) },
-            { item: '学习能力', score: parseInt(trainee.学习能力) },
-            { item: '理解能力', score: parseInt(trainee.理解能力) },
-            { item: '沟通能力', score: parseInt(trainee.沟通能力) }
+            { item: 'Technical Ability', score: parseInt(trainee.技术能力) },
+            { item: 'Learning Ability', score: parseInt(trainee.学习能力) },
+            { item: 'Comprehension Ability', score: parseInt(trainee.理解能力) },
+            { item: 'Communication Ability', score: parseInt(trainee.沟通能力) }
         ];
     }
 
