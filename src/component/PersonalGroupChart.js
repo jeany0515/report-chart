@@ -28,6 +28,7 @@ export default class PersonalGroupChart extends Component {
                     <TraineeHomeworkQualityChart name={this.props.name} />
                   </Col>
                 </Row>
+                <Divider />
                 <Row>
                   <Col flex="auto">
                     <TraineeHomeworkQualityTrendChart name={this.props.name} />
