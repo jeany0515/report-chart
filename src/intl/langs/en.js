@@ -26,7 +26,7 @@ export default {
     level_overview_des: 'Statistics based on the overall performance of the students',
     ability_chart: '\'s ability chart',
     homework_chart: '\'s homework quality overview',
-    quality_chart: '\'s quality chart of each assignment',
+    quality_chart: '\'s quality chart of each homework',
     detail_dimension_score: '\'s detailed scores for each dimension ability',
     position_description: 'Current Score',
     current_score: 'Current score',
