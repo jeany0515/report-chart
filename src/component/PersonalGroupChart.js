@@ -21,15 +21,17 @@ export default class PersonalGroupChart extends Component {
                 <TraineePositionChart name={this.props.name} />
                 <Divider />
                 <Row>
-                    <Col flex="500px" style={{ padding: "10px" }}>
-                        <TraineeAbilityRadarChart name={this.props.name} />
-                    </Col>
-                    <Col flex="500px" style={{ padding: "10px" }}>
-                        <TraineeHomeworkQualityTrendChart name={this.props.name} />
-                    </Col>
-                    <Col flex="500px" style={{ padding: "10px" }}>
-                        <TraineeHomeworkQualityChart name={this.props.name} />
-                    </Col>
+                  <Col span={12} style={{ padding: "10px" }}>
+                    <TraineeAbilityRadarChart name={this.props.name} />
+                  </Col>
+                  <Col span={12} style={{ padding: "10px" }}>
+                    <TraineeHomeworkQualityChart name={this.props.name} />
+                  </Col>
+                </Row>
+                <Row>
+                  <Col flex="auto">
+                    <TraineeHomeworkQualityTrendChart name={this.props.name} />
+                  </Col>
                 </Row>
                 <Divider />
                 <TraineePersonDetailRadarChart name={this.props.name} />
