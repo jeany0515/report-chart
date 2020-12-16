@@ -37,12 +37,12 @@ export const MARGINAL = 'Marginal'
 export const TECH_BEHAVIORS = {
     '每次任务都有验收思想': 'tech_behavior_1',
     '有代码设计': 'tech_behavior_2',
-    '每次练习都能做到职责单一': 'tech_behavior_3',
+    '能独立编写代码': 'tech_behavior_3',
     '代码编写满足clean code': 'tech_behavior_4',
-    '能较快的完成各类练习': 'tech_behavior_5',
-    '能通过搜集信息快速定位问题': 'tech_behavior_6',
+    '能较快高质量的完成各类编程': 'tech_behavior_5',
+    '能通过搜集信息快速解决问题': 'tech_behavior_6',
     '能利用资源完成任务': 'tech_behavior_7',
-    '能解决问题': 'tech_behavior_8',
+    '能实践新技术': 'tech_behavior_8',
 }
 export const LEARN_BEHAVIORS = {
     '有小步迭代思想': 'learn_behavior_1',
@@ -55,10 +55,10 @@ export const LEARN_BEHAVIORS = {
     '每天都有持续改进': 'learn_behavior_8'
 }
 export const COMPREHENSION_BEHAVIORS = {
-    '能做任务分解': 'comprehension_behavior_1',
+    '有tasking思想': 'comprehension_behavior_1',
     '能接受他人的反馈并改进': 'comprehension_behavior_2',
-    '拿到任务能做到需求澄清': 'comprehension_behavior_3',
-    '能理解练习的需求': 'comprehension_behavior_4',
+    '每次任务都做到需求澄清': 'comprehension_behavior_3',
+    '能理解每次练习的需求': 'comprehension_behavior_4',
     '能发现他人代码中的问题': 'comprehension_behavior_5',
     '能理解新知识': 'comprehension_behavior_6',
     '能使用有业务意义的git commit': 'comprehension_behavior_7',
