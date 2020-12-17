@@ -22,7 +22,7 @@ export default class TraineeHomeworkQualityTrendChart extends Component {
                 range: [0, 1],
             },
             value: {
-                min: 0,
+                min: 5,
                 nice: true,
             },
         });
