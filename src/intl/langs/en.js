@@ -1,6 +1,6 @@
 export default {
     title: '2020 OOCL ITA AFS Bootcamp Report',
-    date_range: '12/10 - 06/11',
+    date_range: 'Nov 23 - Dec 18',
     overall_ranking: 'Overall Ranking',
     comprehensive_ranking: 'Comprehensive ranking of all students',
     overall_ranking_des: 'The weight of technical ability and learning ability is 3, and the weight of understanding ability and communication ability is 2.',
