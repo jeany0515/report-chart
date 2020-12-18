@@ -23,7 +23,7 @@ export default class OverviewLevelChart extends Component {
 
         chart.scale('percent', {
             formatter: (val) => {
-                val = parseInt(val * 100) + '%';
+                val = (val * 100).toFixed(2) + '%';
                 return val;
             },
         });
@@ -36,7 +36,7 @@ export default class OverviewLevelChart extends Component {
             .color('item')
             .label('percent', {
                 content: (data) => {
-                    return `${data.item}: ${parseInt(data.percent * 100)}%`;
+                    return `${data.item}: ${(data.percent * 100).toFixed(2)}%`;
                 },
             })
             .adjust('stack');
