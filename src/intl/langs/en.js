@@ -22,7 +22,7 @@ export default {
     learning_ability: 'Learning ability',
     comprehension: 'Comprehension ability',
     communication: 'Communication ability',
-    level_overview: 'Overview of Students Ranking',
+    level_overview: 'Overview of Students Level',
     level_overview_des: 'Statistics based on the overall performance of the students',
     ability_chart: '\'s ability chart',
     homework_chart: '\'s homework quality overview',
