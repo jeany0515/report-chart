@@ -124,39 +124,39 @@ class DataService {
         if (category === TECHNOLOGY) {
             const techScores = data.总分.map(trainee => {
                 const score = parseInt(trainee.技术能力)
-                const category = this.getLevelName(score, TECH_OUTSTANDING_LINE, TECH_GOOD_LINE, TECH_COMPETENT_LINE, TECH_DEVELOPING_LINE)
-                return { name: trainee.名字, score: score, cat: category }
+                const levelName = this.getLevelName(score, TECH_OUTSTANDING_LINE, TECH_GOOD_LINE, TECH_COMPETENT_LINE, TECH_DEVELOPING_LINE)
+                return { name: trainee.名字, score: score, cat: levelName }
             })
             techScores.sort(function (a, b) { return a.score - b.score })
             return techScores
         } else if (category === LEARNING) {
             const learnScores = data.总分.map(trainee => {
                 const score = parseInt(trainee.学习能力)
-                const category = this.getLevelName(score, LEARN_OUTSTANDING_LINE, LEARN_GOOD_LINE, LEARN_COMPETENT_LINE, LEARN_DEVELOPING_LINE)
-                return { name: trainee.名字, score: score, cat: category }
+                const levelName = this.getLevelName(score, LEARN_OUTSTANDING_LINE, LEARN_GOOD_LINE, LEARN_COMPETENT_LINE, LEARN_DEVELOPING_LINE)
+                return { name: trainee.名字, score: score, cat: levelName }
             })
             learnScores.sort(function (a, b) { return a.score - b.score })
             return learnScores
         } else if (category === COMPREHENSION) {
             const compreScores = data.总分.map(trainee => {
                 const score = parseInt(trainee.理解能力)
-                const category = this.getLevelName(score, COMPREHENSION_OUTSTANDING_LINE, COMPREHENSION_GOOD_LINE, COMPREHENSION_COMPETENT_LINE, COMPREHENSION_DEVELOPING_LINE)
-                return { name: trainee.名字, score: score, cat: category }
+                const levelName = this.getLevelName(score, COMPREHENSION_OUTSTANDING_LINE, COMPREHENSION_GOOD_LINE, COMPREHENSION_COMPETENT_LINE, COMPREHENSION_DEVELOPING_LINE)
+                return { name: trainee.名字, score: score, cat: levelName }
             })
             compreScores.sort(function (a, b) { return a.score - b.score })
             return compreScores
         }
         const commuScores = data.总分.map(trainee => {
             const score = parseInt(trainee.沟通能力)
-            const category = this.getLevelName(score, COMMUNICATION_OUTSTANDING_LINE, COMMUNICATION_GOOD_LINE, COMMUNICATION_COMPETENT_LINE, COMMUNICATION_DEVELOPING_LINE)
-            return { name: trainee.名字, score: score, cat: category }
+            const levelName = this.getLevelName(score, COMMUNICATION_OUTSTANDING_LINE, COMMUNICATION_GOOD_LINE, COMMUNICATION_COMPETENT_LINE, COMMUNICATION_DEVELOPING_LINE)
+            return { name: trainee.名字, score: score, cat: levelName }
         })
         commuScores.sort(function (a, b) { return a.score - b.score })
         return commuScores
     }
 
     static getLevelName(score, outstandingLine, goodLine, competentLine, developingLine) {
-        let category = OUTSTANDING
+        let category;
         if (parseInt(score) >= outstandingLine) {
             category = OUTSTANDING
         } else if (parseInt(score) >= goodLine) {
@@ -173,7 +173,7 @@ class DataService {
 
     static getAllRankingData() {
         const totalScores = data.总分.map(trainee => {
-            let category = OUTSTANDING
+            let category;
             if (parseInt(trainee.总分) >= DEFAULT_OUTSTANDING_LINE) {
                 category = OUTSTANDING
             } else if (parseInt(trainee.总分) >= DEFAULT_GOOD_LINE) {
@@ -208,7 +208,7 @@ class DataService {
     }
 
     static getTraineeAbiltiyRadarData(name) {
-        const trainee = data.总分.filter(trainee => trainee.名字 === name)[0]
+        const trainee = data.总分.filter(item => item.名字 === name)[0]
         return [
             { item: 'Technical Ability', score: parseInt(trainee.技术能力) },
             { item: 'Learning Ability', score: parseInt(trainee.学习能力) },
@@ -218,21 +218,21 @@ class DataService {
     }
 
     static getTraineeHomeworkQualityTrendData(name) {
-        const trainee = data.作业质量.filter(trainee => trainee.Name === name)[0]
+        const trainee = data.作业质量.filter(item => item.Name === name)[0]
         const homeworkNames = Object.keys(trainee)
         homeworkNames.splice(homeworkNames.indexOf('Name'), 1)
         homeworkNames.splice(homeworkNames.indexOf('Total'), 1)
-        return homeworkNames.map(name => {
-            return { item: name, value: parseInt(trainee[name]) }
+        return homeworkNames.map(homeworkName => {
+            return { item: homeworkName, value: parseInt(trainee[homeworkName]) }
         })
     }
 
     static getTraineeHomeworkQualityData(name) {
-        const trainee = data.作业质量.filter(trainee => trainee.Name === name)[0]
+        const trainee = data.作业质量.filter(item => item.Name === name)[0]
         const homeworkNames = Object.keys(trainee)
         homeworkNames.splice(homeworkNames.indexOf('Name'), 1)
         homeworkNames.splice(homeworkNames.indexOf('Total'), 1)
-        const allScores = homeworkNames.map(name => parseInt(trainee[name]))
+        const allScores = homeworkNames.map(homeworkName => parseInt(trainee[homeworkName]))
         const outstanding = allScores.filter(score => score === 10 || score === 9).length
         const good = allScores.filter(score => score === 8 || score === 7).length
         const competent = allScores.filter(score => score === 6 || score === 5).length
