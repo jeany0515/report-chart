@@ -1,6 +1,6 @@
 export default {
     title: '2020 OOCL ITA AFS Bootcamp 报告',
-    date_range: '10月12日 - 11月06日',
+    date_range: '11月23日 - 12月18日',
     overall_ranking: '总排名',
     comprehensive_ranking: '所有学员总体能力得分的综合排名',
     overall_ranking_des: '技术能力和学习能力权重是3，理解能力和沟通能力权重是2',
@@ -15,7 +15,7 @@ export default {
     homework_ranking: '作业质量排名',
     all_homework_ranking: '所有学员的作业质量得分排名结果',
     platform_score_ranking: '学习平台积分排名',
-    platform_score_ranking_des: '此结果仅统计作业完成度得分和验收题得分。',
+    platform_score_ranking_des: '此结果统计了平台上所有练习的得分。',
     ability_overview: '学员能力总览',
     dimension_results: '所有学员分不同维度的统计结果',
     technical_skills: '技术能力',
