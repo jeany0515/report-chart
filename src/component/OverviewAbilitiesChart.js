@@ -25,8 +25,7 @@ class OverviewAbilitiesChart extends Component {
         chart.data(data);
         chart.scale('percent', {
             formatter: (val) => {
-                val = val * 100 + '%';
-                return val;
+                return (val * 100).toFixed(2) + '%';
             },
         });
         chart.coordinate('theta', {
@@ -53,8 +52,8 @@ class OverviewAbilitiesChart extends Component {
             .color('item', colors)
             .label('percent', (percent) => {
                 return {
-                    content: (data) => {
-                        return `${data.item}: ${parseInt(percent * 100)}%`;
+                    content: (content) => {
+                        return `${content.item}: ${(percent * 100).toFixed(2)}%`;
                     },
                 };
             })
