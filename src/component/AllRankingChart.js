@@ -13,7 +13,7 @@ class AllRankingChart extends Component {
         const chart = new Chart({
             container: 'allRanking',
             autoFit: true,
-            height: 800,
+            height: 300,
         });
         chart.data(data);
         chart.scale({

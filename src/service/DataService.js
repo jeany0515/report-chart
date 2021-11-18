@@ -1,37 +1,38 @@
 import data from '../data/data.json'
 import {
-    DEFAULT_OUTSTANDING_LINE,
-    DEFAULT_GOOD_LINE,
-    DEFAULT_COMPETENT_LINE,
-    DEFAULT_DEVELOPING_LINE,
-    TECH_OUTSTANDING_LINE,
-    TECH_GOOD_LINE,
-    TECH_COMPETENT_LINE,
-    TECH_DEVELOPING_LINE,
-    LEARN_OUTSTANDING_LINE,
-    LEARN_GOOD_LINE,
-    LEARN_COMPETENT_LINE,
-    LEARN_DEVELOPING_LINE,
-    COMPREHENSION_OUTSTANDING_LINE,
-    COMPREHENSION_GOOD_LINE,
-    COMPREHENSION_COMPETENT_LINE,
-    COMPREHENSION_DEVELOPING_LINE,
-    COMMUNICATION_OUTSTANDING_LINE,
-    COMMUNICATION_GOOD_LINE,
+    COLOR_MAP,
+    COMMUNICATION_BEHAVIORS,
     COMMUNICATION_COMPETENT_LINE,
     COMMUNICATION_DEVELOPING_LINE,
-    TECHNOLOGY,
-    LEARNING,
-    COMPREHENSION,
-    OUTSTANDING,
-    GOOD,
+    COMMUNICATION_GOOD_LINE,
+    COMMUNICATION_OUTSTANDING_LINE,
     COMPETENT,
-    DEVELOPING,
-    MARGINAL,
-    TECH_BEHAVIORS,
-    LEARN_BEHAVIORS,
+    COMPREHENSION,
     COMPREHENSION_BEHAVIORS,
-    COMMUNICATION_BEHAVIORS
+    COMPREHENSION_COMPETENT_LINE,
+    COMPREHENSION_DEVELOPING_LINE,
+    COMPREHENSION_GOOD_LINE,
+    COMPREHENSION_OUTSTANDING_LINE,
+    DEFAULT_COMPETENT_LINE,
+    DEFAULT_DEVELOPING_LINE,
+    DEFAULT_GOOD_LINE,
+    DEFAULT_OUTSTANDING_LINE,
+    DEVELOPING,
+    GOOD,
+    LEARN_BEHAVIORS,
+    LEARN_COMPETENT_LINE,
+    LEARN_DEVELOPING_LINE,
+    LEARN_GOOD_LINE,
+    LEARN_OUTSTANDING_LINE,
+    LEARNING,
+    MARGINAL,
+    OUTSTANDING,
+    TECH_BEHAVIORS,
+    TECH_COMPETENT_LINE,
+    TECH_DEVELOPING_LINE,
+    TECH_GOOD_LINE,
+    TECH_OUTSTANDING_LINE,
+    TECHNOLOGY
 } from "../constants/constants";
 
 class DataService {
@@ -50,6 +51,10 @@ class DataService {
             DEFAULT_GOOD_LINE,
             DEFAULT_COMPETENT_LINE,
             DEFAULT_DEVELOPING_LINE)
+    }
+
+    static getOverviewLevelColor() {
+        return this.getOverviewLevelData().map(data => COLOR_MAP[data.item]);
     }
 
     static getPercentData(scores,
@@ -201,7 +206,7 @@ class DataService {
 
     static getHomeworkScoreData() {
         const scores = data.学习平台积分.map((trainee) => {
-            return { name: trainee.名字, score: trainee.平台积分 }
+            return { name: trainee.名字, score: trainee.分数 }
         })
         scores.sort(function (a, b) { return a.score - b.score })
         return scores
@@ -275,7 +280,7 @@ class DataService {
         const trainee = data.总分.filter(item => item.名字 === name)[0]
 
         // 由于图表是0-5的range，而我们的分数是1200-3200的range，所以在这里做了一个映射转换。因为图表用1200-3200的range显示会有问题。
-        const score = (parseInt(trainee.总分) - 1200) / 400 
+        const score = (parseInt(trainee.总分) - 1000) / 200
         
         return { title: trainee.名字, subtitle: '', ranges: [1, 2, 3, 4, 5], actual: 0, target: score }
     }

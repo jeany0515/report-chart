@@ -27,8 +27,8 @@ export default class TraineeAbilityRadarChart extends Component {
         });
         chart.data(dv.rows);
         chart.scale('score', {
-            min: 160,
-            max: 320,
+            min: 0,
+            max: 200,
         });
         chart.coordinate('polar', {
             radius: 0.8,

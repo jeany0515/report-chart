@@ -76,18 +76,18 @@ class OverviewAbilitiesChart extends Component {
                 <h1><FormattedMessage id='ability_overview' /></h1>
                 <p><FormattedMessage id='dimension_results' /></p>
                 <Row >
-                    <Col flex="820px">
+                    <Col flex="810px">
                         <div id="tech"></div>
                     </Col>
-                    <Col flex="820px">
+                    <Col flex="810px">
                         <div id="learn"></div>
                     </Col>
                 </Row>
                 <Row>
-                    <Col flex="820px">
+                    <Col flex="810px">
                         <div id="comprehension"></div>
                     </Col>
-                    <Col flex="820px">
+                    <Col flex="810px">
                         <div id="communication"></div>
                     </Col>
                 </Row>

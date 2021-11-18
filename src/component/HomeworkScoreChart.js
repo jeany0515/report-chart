@@ -13,7 +13,7 @@ export default class HomeworkScoreChart extends Component {
         const chart = new Chart({
             container: 'score',
             autoFit: true,
-            height: 500,
+            height: 300,
         });
 
         chart.data(DataService.getHomeworkScoreData());
@@ -34,7 +34,7 @@ export default class HomeworkScoreChart extends Component {
 
     render() {
         return (
-            <div style={{margin: "50px"}}>
+            <div style={{margin: "30px"}}>
                 <h1><FormattedMessage id='platform_score_ranking'/></h1>
                 <p><FormattedMessage id='platform_score_ranking_des'/></p>
                 <div id='score'>

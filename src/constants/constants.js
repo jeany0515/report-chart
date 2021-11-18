@@ -1,27 +1,27 @@
-export const DEFAULT_OUTSTANDING_LINE = 2800
-export const DEFAULT_GOOD_LINE = 2400
-export const DEFAULT_COMPETENT_LINE = 2000
-export const DEFAULT_DEVELOPING_LINE = 1600
+export const DEFAULT_OUTSTANDING_LINE = 1800
+export const DEFAULT_GOOD_LINE = 1600
+export const DEFAULT_COMPETENT_LINE = 1400
+export const DEFAULT_DEVELOPING_LINE = 1200
 
-export const TECH_OUTSTANDING_LINE = 280
-export const TECH_GOOD_LINE = 240
-export const TECH_COMPETENT_LINE = 200
-export const TECH_DEVELOPING_LINE = 160
+export const TECH_OUTSTANDING_LINE = 180
+export const TECH_GOOD_LINE = 160
+export const TECH_COMPETENT_LINE = 140
+export const TECH_DEVELOPING_LINE = 120
 
-export const LEARN_OUTSTANDING_LINE = 280
-export const LEARN_GOOD_LINE = 240
-export const LEARN_COMPETENT_LINE = 200
-export const LEARN_DEVELOPING_LINE = 160
+export const LEARN_OUTSTANDING_LINE = 180
+export const LEARN_GOOD_LINE = 160
+export const LEARN_COMPETENT_LINE = 140
+export const LEARN_DEVELOPING_LINE = 120
 
-export const COMPREHENSION_OUTSTANDING_LINE = 280
-export const COMPREHENSION_GOOD_LINE = 240
-export const COMPREHENSION_COMPETENT_LINE = 200
-export const COMPREHENSION_DEVELOPING_LINE = 160
+export const COMPREHENSION_OUTSTANDING_LINE = 180
+export const COMPREHENSION_GOOD_LINE = 160
+export const COMPREHENSION_COMPETENT_LINE = 140
+export const COMPREHENSION_DEVELOPING_LINE = 120
 
-export const COMMUNICATION_OUTSTANDING_LINE = 280
-export const COMMUNICATION_GOOD_LINE = 240
-export const COMMUNICATION_COMPETENT_LINE = 200
-export const COMMUNICATION_DEVELOPING_LINE = 160
+export const COMMUNICATION_OUTSTANDING_LINE = 180
+export const COMMUNICATION_GOOD_LINE = 160
+export const COMMUNICATION_COMPETENT_LINE = 140
+export const COMMUNICATION_DEVELOPING_LINE = 120
 
 export const TECHNOLOGY = "Technology"
 export const LEARNING = "Learning"
@@ -36,43 +36,31 @@ export const MARGINAL = 'Marginal'
 
 export const TECH_BEHAVIORS = {
     '每次任务都有验收思想': 'tech_behavior_1',
-    '有代码设计': 'tech_behavior_2',
-    '能独立编写代码': 'tech_behavior_3',
-    '代码编写满足clean code': 'tech_behavior_4',
-    '能较快高质量的完成各类编程': 'tech_behavior_5',
-    '能通过搜集信息快速解决问题': 'tech_behavior_6',
-    '能利用资源完成任务': 'tech_behavior_7',
-    '能实践新技术': 'tech_behavior_8',
+    '代码质量高': 'tech_behavior_2',
+    '能较快的完成各类练习': 'tech_behavior_3',
+    '能独立定位问题': 'tech_behavior_4',
+    '能独立解决问题': 'tech_behavior_5',
 }
 export const LEARN_BEHAVIORS = {
-    '有小步迭代思想': 'learn_behavior_1',
-    '遵循最佳实践': 'learn_behavior_2',
-    '能从他人身上学习': 'learn_behavior_3',
-    '坚持每日写总结': 'learn_behavior_4',
-    '有很好的执行力': 'learn_behavior_5',
-    '能分清优先级': 'learn_behavior_6',
-    '有良好的工作习惯': 'learn_behavior_7',
-    '每天都有持续改进': 'learn_behavior_8'
+    '遵循最佳实践': 'learn_behavior_1',
+    '能从他人身上学习': 'learn_behavior_2',
+    '有良好的工作习惯': 'learn_behavior_3',
+    '有很好的执行力': 'learn_behavior_4',
+    '每天都有持续改进': 'learn_behavior_5',
 }
 export const COMPREHENSION_BEHAVIORS = {
-    '有tasking思想': 'comprehension_behavior_1',
-    '能接受他人的反馈并改进': 'comprehension_behavior_2',
-    '每次任务都做到需求澄清': 'comprehension_behavior_3',
-    '能理解每次练习的需求': 'comprehension_behavior_4',
-    '能发现他人代码中的问题': 'comprehension_behavior_5',
-    '能理解新知识': 'comprehension_behavior_6',
-    '能使用有业务意义的git commit': 'comprehension_behavior_7',
-    '能使用有业务意义的代码命名': 'comprehension_behavior_8'
+    '能接受他人的反馈并改进': 'comprehension_behavior_1',
+    '拿到任务能做到需求澄清': 'comprehension_behavior_2',
+    '能理解练习的需求': 'comprehension_behavior_3',
+    '能发现他人代码中的问题': 'comprehension_behavior_4',
+    '能理解新知识': 'comprehension_behavior_5',
 }
 export const COMMUNICATION_BEHAVIORS = {
-    '能积极提供支持或帮助': 'communication_behavior_1',
-    '能积极参与小组内讨论': 'communication_behavior_2',
-    '有良好的团队协作能力': 'communication_behavior_3',
-    '能产生有效对话': 'communication_behavior_4',
-    '能积极回答问题': 'communication_behavior_5',
-    '能积极寻求帮助': 'communication_behavior_6',
-    '能积极给出反馈': 'communication_behavior_7',
-    '能积极分享观点或技能': 'communication_behavior_8'
+    '能积极参与小组内讨论': 'communication_behavior_1',
+    '能积极回答问题': 'communication_behavior_2',
+    '能积极寻求帮助,并澄清自己的问题': 'communication_behavior_3',
+    '能积极提供支持或帮助': 'communication_behavior_4',
+    '能积极分享观点、技能': 'communication_behavior_5',
 }
 
 export const COLOR_MAP = {

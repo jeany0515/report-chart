@@ -39,7 +39,7 @@ import {FormattedMessage} from "react-intl";
         });
         chart.data(dv.rows);
         chart.scale('score', {
-            min: 10,
+            min: 0,
             max: 40,
         });
         chart.coordinate('polar', {
@@ -111,22 +111,22 @@ import {FormattedMessage} from "react-intl";
             <div>
                 <h1>{this.props.name}<FormattedMessage id='detail_dimension_score'/></h1>
                 <Row >
-                    <Col flex="750px">
+                    <Col flex="730px">
                         <h2><FormattedMessage id='technical_skills'/></h2>
                         <div id={this.props.name + "techDetail"}></div>
                     </Col>
-                    <Col flex="750px">
+                    <Col flex="730px">
                         <h2><FormattedMessage id='learning_ability'/></h2>
                         <div id={this.props.name + "learnDetail"}></div>
                     </Col>
                 </Row>
                 <Divider />
                 <Row>
-                    <Col flex="750px">
+                    <Col flex="730px">
                         <h2><FormattedMessage id='comprehension'/></h2>
                         <div id={this.props.name + "comprehensionDetail"}></div>
                     </Col>
-                    <Col flex="750px">
+                    <Col flex="730px">
                         <h2><FormattedMessage id='communication'/></h2>
                         <div id={this.props.name + "communicationDetail"}></div>
                     </Col>

@@ -33,7 +33,7 @@ export default class OverviewLevelChart extends Component {
         chart
             .interval()
             .position('percent')
-            .color('item')
+            .color('item', DataService.getOverviewLevelColor())
             .label('percent', {
                 content: (data) => {
                     return `${data.item}: ${(data.percent * 100).toFixed(2)}%`;

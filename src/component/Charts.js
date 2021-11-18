@@ -27,10 +27,10 @@ class Charts extends Component {
                 <AllRankingChart />
                 <Divider />
                 <Row>
-                    <Col flex="820px" style={{ padding: "10px" }}>
+                    <Col flex="810px" style={{ padding: "10px" }}>
                         <HomeworkQualityRankingChart />
                     </Col>
-                    <Col flex="820px" style={{ padding: "10px" }}>
+                    <Col flex="810px" style={{ padding: "10px" }}>
                         <HomeworkScoreChart />
                     </Col>
                 </Row>

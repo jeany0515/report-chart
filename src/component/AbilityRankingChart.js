@@ -17,7 +17,7 @@ export default class AbilityRankingChart extends Component {
         const chart = new Chart({
             container: containerId,
             autoFit: true,
-            height: 800,
+            height: 300,
             // padding: [20, 0, 50, 100],
         });
         chart.data(data);
@@ -80,13 +80,13 @@ export default class AbilityRankingChart extends Component {
                 <h1><FormattedMessage id="ability_ranking"/></h1>
                 <p><FormattedMessage id="dimensional_ranking"/></p>
                 <Row >
-                    <Col flex="820px" style={{ padding: "10px" }}>
+                    <Col flex="810px" style={{ padding: "10px" }}>
                         <div>
                             <h2><FormattedMessage id="technical_ranking"/></h2>
                             <div id="techRanking"></div>
                         </div>
                     </Col>
-                    <Col flex="820px" style={{ padding: "10px" }}>
+                    <Col flex="810px" style={{ padding: "10px" }}>
                         <div>
                             <h2><FormattedMessage id='learning_ranking'/></h2>
                             <div id="learnRanking"></div>
@@ -94,13 +94,13 @@ export default class AbilityRankingChart extends Component {
                     </Col>
                 </Row>
                 <Row>
-                    <Col flex="820px">
+                    <Col flex="810px">
                         <div>
                             <h2><FormattedMessage id='comprehension_ranking'/></h2>
                             <div id="comprehensionRanking"></div>
                         </div>
                     </Col>
-                    <Col flex="820px">
+                    <Col flex="810px">
                         <div>
                             <h2><FormattedMessage id='communication_ranking'/></h2>
                             <div id="communicationRanking"></div>

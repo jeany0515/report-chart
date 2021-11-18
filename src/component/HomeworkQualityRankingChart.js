@@ -13,7 +13,7 @@ export default class HomeworkQualityRankingChart extends Component {
         const chart = new Chart({
             container: 'qualityRanking',
             autoFit: true,
-            height: 500,
+            height: 300,
         });
 
         chart.data(DataService.getHomeworkQualityRankingData());
@@ -34,7 +34,7 @@ export default class HomeworkQualityRankingChart extends Component {
 
     render() {
         return (
-            <div style={{margin: "50px"}}>
+            <div style={{margin: "30px"}}>
                 <h1><FormattedMessage id='homework_ranking'/></h1>
                 <p><FormattedMessage id='all_homework_ranking'/></p>
                 <div id='qualityRanking'>
